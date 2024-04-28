@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="question_choice">
+    <question_choice action="INSERT_OR_UPDATE">
+        <inactive>false</inactive>
+        <order>200</order>
+        <published_ref/>
+        <question display_value="Please Rate the Team work in the application">8a3d911693b10210ee61f5befaba10b4</question>
+        <sys_class_name>question_choice</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-04-28 10:55:16</sys_created_on>
+        <sys_id>c22e555693b10210ee61f5befaba10bf</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="Feedback">cd38c55a93310210ee61f5befaba10ce</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-04-28 10:55:16</sys_updated_on>
+        <text>Good</text>
+        <value>good</value>
+    </question_choice>
+    <fx_price action="delete_multiple" query="id=c22e555693b10210ee61f5befaba10bf"/>
+</record_update>
