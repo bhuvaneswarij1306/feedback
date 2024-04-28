@@ -1,15 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?><record_update table="question_choice">
     <question_choice action="INSERT_OR_UPDATE">
         <inactive>false</inactive>
-        <misc>0</misc>
-        <order>300</order>
+        <order>400</order>
         <published_ref/>
-        <question display_value="Please Rate the Overall Experience in the application">098e5d5693b10210ee61f5befaba1084</question>
-        <rec_misc>0</rec_misc>
+        <question display_value="Please Rate the Complexity of the application">0210691a93b10210ee61f5befaba1092</question>
         <sys_class_name>question_choice</sys_class_name>
         <sys_created_by>admin</sys_created_by>
-        <sys_created_on>2024-04-28 10:58:14</sys_created_on>
-        <sys_id>a5ded19693b10210ee61f5befaba10fa</sys_id>
+        <sys_created_on>2024-04-28 11:10:48</sys_created_on>
+        <sys_id>edb1e99a93b10210ee61f5befaba1087</sys_id>
         <sys_mod_count>0</sys_mod_count>
         <sys_name/>
         <sys_package/>
@@ -17,9 +15,9 @@
         <sys_scope display_value="Feedback">cd38c55a93310210ee61f5befaba10ce</sys_scope>
         <sys_update_name/>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2024-04-28 10:58:14</sys_updated_on>
-        <text>⭐⭐⭐</text>
-        <value>3</value>
+        <sys_updated_on>2024-04-28 11:10:48</sys_updated_on>
+        <text>Poor</text>
+        <value>poor</value>
     </question_choice>
-    <fx_price action="delete_multiple" query="id=a5ded19693b10210ee61f5befaba10fa"/>
+    <fx_price action="delete_multiple" query="id=edb1e99a93b10210ee61f5befaba1087"/>
 </record_update>
