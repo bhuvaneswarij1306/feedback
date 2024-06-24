@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_instance_vlist">
+    <sp_instance_vlist action="DELETE">
+        <active>true</active>
+        <class_name/>
+        <color>default</color>
+        <css/>
+        <display_field>owner</display_field>
+        <field_list/>
+        <filter table="x_1346722_feedback_feedback">sys_created_by=javascript: gs.getUserName()<item endquery="false" field="sys_created_by" goto="false" newquery="false" operator="=" or="false" value="javascript: gs.getUserName()"/>
+        </filter>
+        <glyph/>
+        <id/>
+        <maximum_entries>5</maximum_entries>
+        <order>3</order>
+        <order_by/>
+        <order_direction>asc</order_direction>
+        <roles/>
+        <short_description/>
+        <size>md</size>
+        <sp_column display_value="1">ea04f9b793310210ee61f5befaba1078</sp_column>
+        <sp_page display_value="form">ed5f8ec347730200ba13a5554ee49046</sp_page>
+        <sp_widget display_value="Simple List">5b255672cb03020000f8d856634c9c28</sp_widget>
+        <sys_class_name>sp_instance_vlist</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-05-03 04:22:10</sys_created_on>
+        <sys_id>b024f9b793310210ee61f5befaba107d</sys_id>
+        <sys_mod_count>6</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="Feedback" source="x_1346722_feedback">cd38c55a93310210ee61f5befaba10ce</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Feedback">cd38c55a93310210ee61f5befaba10ce</sys_scope>
+        <sys_update_name>sp_instance_vlist_b024f9b793310210ee61f5befaba107d</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-05-08 14:10:04</sys_updated_on>
+        <table>x_1346722_feedback_feedback</table>
+        <title/>
+        <url/>
+        <widget_parameters><![CDATA[{
+	"always_show": {
+		"value": "",
+		"displayValue": ""
+	},
+	"panel_body_height": {
+		"value": "",
+		"displayValue": ""
+	},
+	"image_field": {
+		"value": "",
+		"displayValue": ""
+	},
+	"secondary_fields": {
+		"value": "application,complexity,innovations,team_work,overall_rateing",
+		"displayValue": "application,complexity,innovations,team_work,overall_rateing"
+	},
+	"rounded_images": {
+		"value": "",
+		"displayValue": ""
+	},
+	"list_page": {
+		"value": "b574e51147132100ba13a5554ee4903e",
+		"displayValue": "list"
+	},
+	"hide_footer": {
+		"value": "",
+		"displayValue": ""
+	},
+	"view": {
+		"value": "",
+		"displayValue": ""
+	},
+	"disable_record_watcher": {
+		"value": "",
+		"displayValue": ""
+	},
+	"filter_acls": {
+		"value": "false",
+		"displayValue": "false"
+	}
+}]]></widget_parameters>
+    </sp_instance_vlist>
+    <sys_translated_text action="DELETE" query="documentkey=b024f9b793310210ee61f5befaba107d"/>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="Feedback">cd38c55a93310210ee61f5befaba10ce</application>
+        <file_path/>
+        <instance_id>8afd14cb1b12b59439a54089bd4bcbcb</instance_id>
+        <instance_name>dev208512</instance_name>
+        <name>sp_instance_vlist_b024f9b793310210ee61f5befaba107d</name>
+        <payload>&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;record_update table="sp_instance_vlist"&gt;&lt;sp_instance_vlist action="INSERT_OR_UPDATE"&gt;&lt;active&gt;true&lt;/active&gt;&lt;class_name/&gt;&lt;color&gt;default&lt;/color&gt;&lt;css/&gt;&lt;display_field&gt;owner&lt;/display_field&gt;&lt;field_list/&gt;&lt;filter table="x_1346722_feedback_feedback"&gt;sys_created_by=javascript: gs.getUserName()&lt;item endquery="false" field="sys_created_by" goto="false" newquery="false" operator="=" or="false" value="javascript: gs.getUserName()"/&gt;&lt;/filter&gt;&lt;glyph/&gt;&lt;id/&gt;&lt;maximum_entries&gt;5&lt;/maximum_entries&gt;&lt;order&gt;3&lt;/order&gt;&lt;order_by/&gt;&lt;order_direction&gt;asc&lt;/order_direction&gt;&lt;roles/&gt;&lt;short_description/&gt;&lt;size&gt;md&lt;/size&gt;&lt;sp_column display_value="1"&gt;ea04f9b793310210ee61f5befaba1078&lt;/sp_column&gt;&lt;sp_page display_value="form"&gt;ed5f8ec347730200ba13a5554ee49046&lt;/sp_page&gt;&lt;sp_widget display_value="Simple List"&gt;5b255672cb03020000f8d856634c9c28&lt;/sp_widget&gt;&lt;sys_class_name&gt;sp_instance_vlist&lt;/sys_class_name&gt;&lt;sys_created_by&gt;admin&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2024-05-03 04:22:10&lt;/sys_created_on&gt;&lt;sys_id&gt;b024f9b793310210ee61f5befaba107d&lt;/sys_id&gt;&lt;sys_mod_count&gt;6&lt;/sys_mod_count&gt;&lt;sys_name/&gt;&lt;sys_package display_value="Feedback" source="x_1346722_feedback"&gt;cd38c55a93310210ee61f5befaba10ce&lt;/sys_package&gt;&lt;sys_policy/&gt;&lt;sys_scope display_value="Feedback"&gt;cd38c55a93310210ee61f5befaba10ce&lt;/sys_scope&gt;&lt;sys_update_name&gt;sp_instance_vlist_b024f9b793310210ee61f5befaba107d&lt;/sys_update_name&gt;&lt;sys_updated_by&gt;admin&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2024-05-08 14:10:04&lt;/sys_updated_on&gt;&lt;table&gt;x_1346722_feedback_feedback&lt;/table&gt;&lt;title/&gt;&lt;url/&gt;&lt;widget_parameters&gt;&lt;![CDATA[{
+	"always_show": {
+		"value": "",
+		"displayValue": ""
+	},
+	"panel_body_height": {
+		"value": "",
+		"displayValue": ""
+	},
+	"image_field": {
+		"value": "",
+		"displayValue": ""
+	},
+	"secondary_fields": {
+		"value": "application,complexity,innovations,team_work,overall_rateing",
+		"displayValue": "application,complexity,innovations,team_work,overall_rateing"
+	},
+	"rounded_images": {
+		"value": "",
+		"displayValue": ""
+	},
+	"list_page": {
+		"value": "b574e51147132100ba13a5554ee4903e",
+		"displayValue": "list"
+	},
+	"hide_footer": {
+		"value": "",
+		"displayValue": ""
+	},
+	"view": {
+		"value": "",
+		"displayValue": ""
+	},
+	"disable_record_watcher": {
+		"value": "",
+		"displayValue": ""
+	},
+	"filter_acls": {
+		"value": "false",
+		"displayValue": "false"
+	}
+}]]&gt;&lt;/widget_parameters&gt;&lt;/sp_instance_vlist&gt;&lt;sys_translated_text action="delete_multiple" query="documentkey=b024f9b793310210ee61f5befaba107d"/&gt;&lt;/record_update&gt;</payload>
+        <payload_hash>957337296</payload_hash>
+        <record_name/>
+        <reverted_from/>
+        <source>4138c55a93310210ee61f5befaba10ec</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-05-08 14:10:05</sys_created_on>
+        <sys_id>5daae9a5938e0a10ee61f5befaba105d</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>18f588a3a4a0000001</sys_recorded_at>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-05-08 14:10:05</sys_updated_on>
+        <type>Instance of Simple List</type>
+        <update_guid>1daaa9a54c8e0a1077f4ef1d365cc219</update_guid>
+        <update_guid_history>1daaa9a54c8e0a1077f4ef1d365cc219:957337296,3c83d9dd0dc6c610a2ef70d8e1d0d9b0:1624119601,f55359dd6ec6c610d30df5f2a05841f3:-803251727,b6d1d55d57c6c6102605c793c97814fb:-1322847472,e759b97fbc310210c1c0341302128af9:-803251727,e9e7b9fb1c3102100f30b16eb41aa160:1256817771,bc24f9b760310210145cd7b000f4747e:-1619214386</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete display_value="">431de9a5938e0a10ee61f5befaba1065</sys_audit_delete>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-05-08 14:20:50</sys_created_on>
+        <sys_db_object display_value="" name="sp_instance_vlist">sp_instance_vlist</sys_db_object>
+        <sys_id>3cf7332ebd55450a958b4ec2e097f251</sys_id>
+        <sys_metadata>b024f9b793310210ee61f5befaba107d</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="Feedback" source="x_1346722_feedback">cd38c55a93310210ee61f5befaba10ce</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="Feedback">cd38c55a93310210ee61f5befaba10ce</sys_scope>
+        <sys_scope_delete display_value="">45cc0b7884124930a655d854c2ddc900</sys_scope_delete>
+        <sys_update_name>sp_instance_vlist_b024f9b793310210ee61f5befaba107d</sys_update_name>
+        <sys_update_version display_value="sp_instance_vlist_b024f9b793310210ee61f5befaba107d">5daae9a5938e0a10ee61f5befaba105d</sys_update_version>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-05-08 14:20:50</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

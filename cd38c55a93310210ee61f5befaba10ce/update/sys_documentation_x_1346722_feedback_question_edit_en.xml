@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update>
+    <sys_documentation element="edit" label="Edit" language="en" table="x_1346722_feedback_question">
+        <sys_documentation action="INSERT_OR_UPDATE">
+            <element>edit</element>
+            <help/>
+            <hint/>
+            <label>Edit</label>
+            <language>en</language>
+            <name>x_1346722_feedback_question</name>
+            <plural/>
+            <sys_class_name>sys_documentation</sys_class_name>
+            <sys_created_by>nauman.ansari</sys_created_by>
+            <sys_created_on>2024-05-28 08:56:46</sys_created_on>
+            <sys_mod_count>5</sys_mod_count>
+            <sys_name>Edit</sys_name>
+            <sys_package display_value="Feedback" source="x_1346722_feedback">cd38c55a93310210ee61f5befaba10ce</sys_package>
+            <sys_policy/>
+            <sys_scope display_value="Feedback">cd38c55a93310210ee61f5befaba10ce</sys_scope>
+            <sys_update_name>sys_documentation_x_1346722_feedback_question_edit_en</sys_update_name>
+            <sys_updated_by>nauman.ansari</sys_updated_by>
+            <sys_updated_on>2024-05-28 09:12:59</sys_updated_on>
+            <url/>
+            <url_target/>
+        </sys_documentation>
+    </sys_documentation>
+</record_update>

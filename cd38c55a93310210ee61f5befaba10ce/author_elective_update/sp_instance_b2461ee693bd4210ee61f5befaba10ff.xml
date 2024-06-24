@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_instance">
+    <sp_instance action="DELETE">
+        <active>true</active>
+        <class_name/>
+        <color>default</color>
+        <css/>
+        <glyph/>
+        <id/>
+        <order>3</order>
+        <roles/>
+        <short_description/>
+        <size>md</size>
+        <sp_column display_value="3">36461ee693bd4210ee61f5befaba10fa</sp_column>
+        <sp_widget display_value="Approvals">f37aa302cb70020000f8d856634c9cfc</sp_widget>
+        <sys_class_name>sp_instance</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-04-29 09:39:01</sys_created_on>
+        <sys_id>b2461ee693bd4210ee61f5befaba10ff</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_name>My Approvals</sys_name>
+        <sys_package display_value="Feedback" source="x_1346722_feedback">cd38c55a93310210ee61f5befaba10ce</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Feedback">cd38c55a93310210ee61f5befaba10ce</sys_scope>
+        <sys_update_name>sp_instance_b2461ee693bd4210ee61f5befaba10ff</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-05-07 15:01:19</sys_updated_on>
+        <title>My Approvals</title>
+        <url/>
+        <widget_parameters><![CDATA[{
+	"portal": {
+		"value": "true",
+		"displayValue": "true"
+	}
+}]]></widget_parameters>
+    </sp_instance>
+    <sys_translated_text action="DELETE" query="documentkey=b2461ee693bd4210ee61f5befaba10ff"/>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="Feedback">cd38c55a93310210ee61f5befaba10ce</application>
+        <file_path/>
+        <instance_id>8afd14cb1b12b59439a54089bd4bcbcb</instance_id>
+        <instance_name>dev208512</instance_name>
+        <name>sp_instance_b2461ee693bd4210ee61f5befaba10ff</name>
+        <payload>&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;record_update table="sp_instance"&gt;&lt;sp_instance action="INSERT_OR_UPDATE"&gt;&lt;active&gt;true&lt;/active&gt;&lt;class_name/&gt;&lt;color&gt;default&lt;/color&gt;&lt;css/&gt;&lt;glyph/&gt;&lt;id/&gt;&lt;order&gt;3&lt;/order&gt;&lt;roles/&gt;&lt;short_description/&gt;&lt;size&gt;md&lt;/size&gt;&lt;sp_column display_value="3"&gt;36461ee693bd4210ee61f5befaba10fa&lt;/sp_column&gt;&lt;sp_widget display_value="Approvals"&gt;f37aa302cb70020000f8d856634c9cfc&lt;/sp_widget&gt;&lt;sys_class_name&gt;sp_instance&lt;/sys_class_name&gt;&lt;sys_created_by&gt;admin&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2024-04-29 09:39:01&lt;/sys_created_on&gt;&lt;sys_id&gt;b2461ee693bd4210ee61f5befaba10ff&lt;/sys_id&gt;&lt;sys_mod_count&gt;2&lt;/sys_mod_count&gt;&lt;sys_name&gt;My Approvals&lt;/sys_name&gt;&lt;sys_package display_value="Feedback" source="x_1346722_feedback"&gt;cd38c55a93310210ee61f5befaba10ce&lt;/sys_package&gt;&lt;sys_policy/&gt;&lt;sys_scope display_value="Feedback"&gt;cd38c55a93310210ee61f5befaba10ce&lt;/sys_scope&gt;&lt;sys_update_name&gt;sp_instance_b2461ee693bd4210ee61f5befaba10ff&lt;/sys_update_name&gt;&lt;sys_updated_by&gt;admin&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2024-05-07 15:01:19&lt;/sys_updated_on&gt;&lt;title&gt;My Approvals&lt;/title&gt;&lt;url/&gt;&lt;widget_parameters&gt;&lt;![CDATA[{
+	"portal": {
+		"value": "true",
+		"displayValue": "true"
+	}
+}]]&gt;&lt;/widget_parameters&gt;&lt;/sp_instance&gt;&lt;sys_translated_text action="delete_multiple" query="documentkey=b2461ee693bd4210ee61f5befaba10ff"/&gt;&lt;/record_update&gt;</payload>
+        <payload_hash>-1763494318</payload_hash>
+        <record_name>My Approvals</record_name>
+        <reverted_from/>
+        <source>4138c55a93310210ee61f5befaba10ec</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-05-07 15:01:19</sys_created_on>
+        <sys_id>cecca09d9306c610ee61f5befaba102a</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>18f5392c6fd0000001</sys_recorded_at>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-05-07 15:01:19</sys_updated_on>
+        <type>Instance</type>
+        <update_guid>46cca09d0206c610a18cef1097e0072a</update_guid>
+        <update_guid_history>46cca09d0206c610a18cef1097e0072a:-1763494318,fb6ab1ff19310210b2724bb7709c6a22:1812417361,f6465ee666bd4210285062bba42d0300:1093361744</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete display_value="My Approvals">10dcac5d9306c610ee61f5befaba101a</sys_audit_delete>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-05-07 15:01:28</sys_created_on>
+        <sys_db_object display_value="" name="sp_instance">sp_instance</sys_db_object>
+        <sys_id>2e05e2b8b70a488aab479706b1033df1</sys_id>
+        <sys_metadata>b2461ee693bd4210ee61f5befaba10ff</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>My Approvals</sys_name>
+        <sys_package display_value="Feedback" source="x_1346722_feedback">cd38c55a93310210ee61f5befaba10ce</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="Feedback">cd38c55a93310210ee61f5befaba10ce</sys_scope>
+        <sys_scope_delete display_value="">45cc0b7884124930a655d854c2ddc900</sys_scope_delete>
+        <sys_update_name>sp_instance_b2461ee693bd4210ee61f5befaba10ff</sys_update_name>
+        <sys_update_version display_value="sp_instance_b2461ee693bd4210ee61f5befaba10ff">cecca09d9306c610ee61f5befaba102a</sys_update_version>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-05-07 15:01:28</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

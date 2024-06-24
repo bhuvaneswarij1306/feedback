@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_script_client">
+    <sys_script_client action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <applies_extended>false</applies_extended>
+        <condition/>
+        <description/>
+        <field/>
+        <global>true</global>
+        <isolate_script>true</isolate_script>
+        <messages/>
+        <name>FS: On Submit Of Question</name>
+        <order/>
+        <script><![CDATA[function onSubmit() {
+   //Type appropriate comment here, and begin script below
+   g_form.setValue('edit', false);
+   g_form.setValue('editor', '');
+}]]></script>
+        <sys_class_name>sys_script_client</sys_class_name>
+        <sys_created_by>nauman.ansari</sys_created_by>
+        <sys_created_on>2024-05-28 09:14:28</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>e686ebb7939a0a10ee61f5befaba10ad</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>FS: On Submit Of Question</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="Feedback" source="x_1346722_feedback">cd38c55a93310210ee61f5befaba10ce</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Feedback">cd38c55a93310210ee61f5befaba10ce</sys_scope>
+        <sys_update_name>sys_script_client_e686ebb7939a0a10ee61f5befaba10ad</sys_update_name>
+        <sys_updated_by>nauman.ansari</sys_updated_by>
+        <sys_updated_on>2024-05-28 09:14:28</sys_updated_on>
+        <table>x_1346722_feedback_question</table>
+        <type>onSubmit</type>
+        <ui_type>10</ui_type>
+        <view/>
+    </sys_script_client>
+</record_update>

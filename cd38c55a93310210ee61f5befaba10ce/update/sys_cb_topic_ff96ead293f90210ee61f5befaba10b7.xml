@@ -1,0 +1,1300 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_cb_topic">
+    <sys_cb_topic action="INSERT_OR_UPDATE">
+        <applicability/>
+        <applicability_mode>query</applicability_mode>
+        <autopilot_topic>false</autopilot_topic>
+        <category/>
+        <channels/>
+        <connect_queue/>
+        <context_profiles/>
+        <description/>
+        <dialog_acts_enabled>false</dialog_acts_enabled>
+        <expose_on_palette>false</expose_on_palette>
+        <flexible_conversation_switching>false</flexible_conversation_switching>
+        <foundational>false</foundational>
+        <graph>{
+  "graph_api_version": "1.0.61",
+  "goals": {
+    "primary": {
+      "id": "primary",
+      "trigger": {
+        "type": "primary"
+      },
+      "name": "primary",
+      "applicability": "",
+      "description": "",
+      "nodes": {
+        "858151f7367e462485475a97ceccc626": {
+          "id": "858151f7367e462485475a97ceccc626",
+          "stepType": "Start",
+          "name": "Start",
+          "greetingResponse": {
+            "mode": "simple",
+            "value": ""
+          }
+        },
+        "18b4d101bd784c64b110385ebe8e74fc": {
+          "id": "18b4d101bd784c64b110385ebe8e74fc",
+          "stepType": "TerminateGoal",
+          "name": "End",
+          "confirmationMessage": {
+            "mode": "simple",
+            "value": ""
+          }
+        },
+        "305dd80bd2904193aa06b6228fb951c7": {
+          "id": "305dd80bd2904193aa06b6228fb951c7",
+          "stepType": "TextOutput",
+          "name": "Greetings ",
+          "secure": false,
+          "value": [
+            {
+              "value": [
+                {
+                  "type": "paragraph",
+                  "children": [
+                    {
+                      "text": "Welcome! It's always pleasure to have you here. How Can we help you?"
+                    }
+                  ]
+                }
+              ],
+              "mode": "simple",
+              "_key": "d15aaf66db5445ddb7b14160423b59c5"
+            }
+          ],
+          "requestFeedback": true,
+          "applicability": {
+            "value": "",
+            "mode": "query"
+          }
+        },
+        "19f3df3200834ba09be6fc114958be78": {
+          "name": "Help Type",
+          "prompt": {
+            "value": [
+              {
+                "type": "paragraph",
+                "children": [
+                  {
+                    "text": "Please select an option"
+                  }
+                ]
+              }
+            ],
+            "mode": "simple"
+          },
+          "confirmMessage": {
+            "value": "",
+            "mode": "simple"
+          },
+          "acknowledgeMsg": {
+            "value": "",
+            "mode": "simple"
+          },
+          "applicability": {
+            "value": "",
+            "mode": "query"
+          },
+          "skippable": {
+            "value": "",
+            "mode": "query"
+          },
+          "skipReprompt": {
+            "value": "",
+            "mode": "query"
+          },
+          "defaultValue": {
+            "value": "",
+            "mode": "simple"
+          },
+          "variableId": "5973a19b477c47aeb301c9fbf2c1303e",
+          "detailDescription": "",
+          "id": "19f3df3200834ba09be6fc114958be78",
+          "stepType": "ChoicePrompt",
+          "hasCardHeader": false,
+          "cardMetadata": {
+            "mode": "card",
+            "metadataScript": "",
+            "cardTemplate": "",
+            "cardFields": {},
+            "cardDefinition": {}
+          },
+          "withNluUserInput": false,
+          "skipIfFulfilled": false
+        },
+        "8b03ac50cf0e4df691c572b16406ef84": {
+          "id": "8b03ac50cf0e4df691c572b16406ef84",
+          "stepType": "Decision",
+          "name": "Decision"
+        },
+        "5e21473abfe044f4862e4363cca53d32": {
+          "id": "5e21473abfe044f4862e4363cca53d32",
+          "stepType": "TextOutput",
+          "name": "Info about feedback",
+          "secure": false,
+          "value": [
+            {
+              "value": [
+                {
+                  "type": "paragraph",
+                  "children": [
+                    {
+                      "text": "Thanks for reaching out to provide feedback "
+                    },
+                    {
+                      "type": "emoji",
+                      "emoji": {
+                        "id": "grinning",
+                        "name": "Grinning Face",
+                        "short_names": [
+                          "grinning"
+                        ],
+                        "colons": ":grinning:",
+                        "emoticons": [],
+                        "unified": "1f600",
+                        "skin": null,
+                        "native": "😀"
+                      },
+                      "children": [
+                        {
+                          "text": ""
+                        }
+                      ]
+                    },
+                    {
+                      "text": ""
+                    }
+                  ]
+                },
+                {
+                  "type": "paragraph",
+                  "children": [
+                    {
+                      "text": "Your Input is valuable to us. Please share your thoughts based on the following"
+                    }
+                  ]
+                }
+              ],
+              "mode": "simple",
+              "_key": "edf4886388c04f9aa2c3c2ae299cd86a"
+            }
+          ],
+          "requestFeedback": true,
+          "applicability": {
+            "value": "",
+            "mode": "query"
+          }
+        },
+        "ccdcd6f49ee140a39939434b43c5a186": {
+          "name": "Complexity",
+          "prompt": {
+            "value": [
+              {
+                "type": "paragraph",
+                "children": [
+                  {
+                    "text": "Please Rate the Application complexity"
+                  }
+                ]
+              },
+              {
+                "type": "paragraph",
+                "children": [
+                  {
+                    "text": "Complexity is based on how the application interface and accessible to the customers"
+                  }
+                ]
+              }
+            ],
+            "mode": "simple"
+          },
+          "confirmMessage": {
+            "value": "",
+            "mode": "simple"
+          },
+          "acknowledgeMsg": {
+            "value": "",
+            "mode": "simple"
+          },
+          "applicability": {
+            "value": "",
+            "mode": "query"
+          },
+          "skippable": {
+            "value": "",
+            "mode": "query"
+          },
+          "skipReprompt": {
+            "value": "",
+            "mode": "query"
+          },
+          "defaultValue": {
+            "value": "",
+            "mode": "simple"
+          },
+          "variableId": "6af59c304bef47fbb28b8ba8547840f2",
+          "detailDescription": "",
+          "id": "ccdcd6f49ee140a39939434b43c5a186",
+          "stepType": "ChoicePrompt",
+          "hasCardHeader": false,
+          "cardMetadata": {
+            "mode": "card",
+            "metadataScript": "",
+            "cardTemplate": "",
+            "cardFields": {},
+            "cardDefinition": {}
+          },
+          "withNluUserInput": false,
+          "skipIfFulfilled": false
+        },
+        "3f0a7e91b95a4a8b8b82c6934e2c93df": {
+          "id": "3f0a7e91b95a4a8b8b82c6934e2c93df",
+          "stepType": "CrudAction",
+          "name": "Create feedback",
+          "template": {
+            "query": {
+              "terms": [
+                {
+                  "prefix": "",
+                  "operator": "=",
+                  "operand": "complexity",
+                  "expression": "{{vaInputs.complexity}}",
+                  "deserializedExpression": [
+                    {
+                      "type": "paragraph",
+                      "children": [
+                        {
+                          "text": ""
+                        },
+                        {
+                          "type": "datapill",
+                          "dataPill": {
+                            "value": "{{vaInputs.complexity}}",
+                            "displayValue": "Input Variables➛Complexity"
+                          },
+                          "children": [
+                            {
+                              "text": ""
+                            }
+                          ]
+                        },
+                        {
+                          "text": ""
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "prefix": "",
+                  "operator": "=",
+                  "operand": "innovations",
+                  "expression": "{{vaInputs.innovation}}",
+                  "deserializedExpression": [
+                    {
+                      "type": "paragraph",
+                      "children": [
+                        {
+                          "text": ""
+                        },
+                        {
+                          "type": "datapill",
+                          "dataPill": {
+                            "value": "{{vaInputs.innovation}}",
+                            "displayValue": "Input Variables➛Innovation"
+                          },
+                          "children": [
+                            {
+                              "text": ""
+                            }
+                          ]
+                        },
+                        {
+                          "text": ""
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "prefix": "",
+                  "operator": "=",
+                  "operand": "overall_rateing",
+                  "expression": "{{vaInputs.overall_rating}}",
+                  "deserializedExpression": [
+                    {
+                      "type": "paragraph",
+                      "children": [
+                        {
+                          "text": ""
+                        },
+                        {
+                          "type": "datapill",
+                          "dataPill": {
+                            "value": "{{vaInputs.overall_rating}}",
+                            "displayValue": "Input Variables➛Overall Rating"
+                          },
+                          "children": [
+                            {
+                              "text": ""
+                            }
+                          ]
+                        },
+                        {
+                          "text": ""
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "prefix": "",
+                  "operator": "=",
+                  "operand": "team_work",
+                  "expression": "{{vaInputs.team_work}}",
+                  "deserializedExpression": [
+                    {
+                      "type": "paragraph",
+                      "children": [
+                        {
+                          "text": ""
+                        },
+                        {
+                          "type": "datapill",
+                          "dataPill": {
+                            "value": "{{vaInputs.team_work}}",
+                            "displayValue": "Input Variables➛Team Work"
+                          },
+                          "children": [
+                            {
+                              "text": ""
+                            }
+                          ]
+                        },
+                        {
+                          "text": ""
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "prefix": "",
+                  "operator": "=",
+                  "operand": "application",
+                  "expression": "{{vaInputs.application}}",
+                  "deserializedExpression": [
+                    {
+                      "type": "paragraph",
+                      "children": [
+                        {
+                          "text": ""
+                        },
+                        {
+                          "type": "datapill",
+                          "dataPill": {
+                            "value": "{{vaInputs.application}}",
+                            "displayValue": "Input Variables➛Application"
+                          },
+                          "children": [
+                            {
+                              "text": ""
+                            }
+                          ]
+                        },
+                        {
+                          "text": ""
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "prefix": "",
+                  "operator": "=",
+                  "operand": "comments",
+                  "expression": "{{vaInputs.comments}}",
+                  "deserializedExpression": [
+                    {
+                      "type": "paragraph",
+                      "children": [
+                        {
+                          "text": ""
+                        },
+                        {
+                          "type": "datapill",
+                          "dataPill": {
+                            "value": "{{vaInputs.comments}}",
+                            "displayValue": "Input Variables➛Comments"
+                          },
+                          "children": [
+                            {
+                              "text": ""
+                            }
+                          ]
+                        },
+                        {
+                          "text": ""
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "prefix": "",
+                  "operator": "=",
+                  "operand": "positive_review",
+                  "expression": "{{vaVars.posCount}}",
+                  "deserializedExpression": [
+                    {
+                      "type": "paragraph",
+                      "children": [
+                        {
+                          "text": ""
+                        },
+                        {
+                          "type": "datapill",
+                          "dataPill": {
+                            "value": "{{vaVars.posCount}}",
+                            "displayValue": "Script Variables➛posCount"
+                          },
+                          "children": [
+                            {
+                              "text": ""
+                            }
+                          ]
+                        },
+                        {
+                          "text": ""
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            "queryString": "complexity={{vaInputs.complexity}}^innovations={{vaInputs.innovation}}^overall_rateing={{vaInputs.overall_rating}}^team_work={{vaInputs.team_work}}^application={{vaInputs.application}}^comments={{vaInputs.comments}}^positive_review={{vaVars.posCount}}"
+          },
+          "mode": "create",
+          "record": "",
+          "applicability": {
+            "value": "",
+            "mode": "query"
+          },
+          "attachments": [
+            {
+              "value": "",
+              "mode": "simple"
+            }
+          ],
+          "variableId": "2423fff408154213b9497efa68293db2"
+        },
+        "1aa61cc3bf8b490c8f8622ec051d3add": {
+          "name": "Application",
+          "prompt": {
+            "value": [
+              {
+                "type": "paragraph",
+                "children": [
+                  {
+                    "text": "Please Select the Application"
+                  }
+                ]
+              },
+              {
+                "type": "paragraph",
+                "children": [
+                  {
+                    "text": ""
+                  }
+                ]
+              }
+            ],
+            "mode": "simple"
+          },
+          "confirmMessage": {
+            "value": "",
+            "mode": "simple"
+          },
+          "acknowledgeMsg": {
+            "value": "",
+            "mode": "simple"
+          },
+          "applicability": {
+            "value": "",
+            "mode": "query"
+          },
+          "skippable": {
+            "value": "",
+            "mode": "query"
+          },
+          "skipReprompt": {
+            "value": "",
+            "mode": "query"
+          },
+          "defaultValue": {
+            "value": "",
+            "mode": "simple"
+          },
+          "variableId": "276b36d67c354932b9b435087673f7d6",
+          "detailDescription": "",
+          "id": "1aa61cc3bf8b490c8f8622ec051d3add",
+          "stepType": "ChoicePrompt",
+          "hasCardHeader": false,
+          "cardMetadata": {
+            "mode": "card",
+            "metadataScript": "",
+            "cardTemplate": "",
+            "cardFields": {},
+            "cardDefinition": {}
+          },
+          "withNluUserInput": false,
+          "skipIfFulfilled": false
+        },
+        "c70aee1e27dd4368ba3252f71d1b1cd5": {
+          "name": "Innovation",
+          "prompt": {
+            "value": [
+              {
+                "type": "paragraph",
+                "children": [
+                  {
+                    "text": "Please Rate the Application's Innovation"
+                  }
+                ]
+              },
+              {
+                "type": "paragraph",
+                "children": [
+                  {
+                    "text": "Innovation is based on how the Creativity and new things implemented"
+                  }
+                ]
+              }
+            ],
+            "mode": "simple"
+          },
+          "confirmMessage": {
+            "value": "",
+            "mode": "simple"
+          },
+          "acknowledgeMsg": {
+            "value": "",
+            "mode": "simple"
+          },
+          "applicability": {
+            "value": "",
+            "mode": "query"
+          },
+          "skippable": {
+            "value": "",
+            "mode": "query"
+          },
+          "skipReprompt": {
+            "value": "",
+            "mode": "query"
+          },
+          "defaultValue": {
+            "value": "",
+            "mode": "simple"
+          },
+          "variableId": "2e11594fcf9147238eb19351eca7bbfd",
+          "detailDescription": "",
+          "id": "c70aee1e27dd4368ba3252f71d1b1cd5",
+          "stepType": "ChoicePrompt",
+          "hasCardHeader": false,
+          "cardMetadata": {
+            "mode": "card",
+            "metadataScript": "",
+            "cardTemplate": "",
+            "cardFields": {},
+            "cardDefinition": {}
+          },
+          "withNluUserInput": false,
+          "skipIfFulfilled": false
+        },
+        "e7366bdb4d624f119ad54139aca70994": {
+          "name": "Team Work",
+          "prompt": {
+            "value": [
+              {
+                "type": "paragraph",
+                "children": [
+                  {
+                    "text": "Please Rate the Team Work"
+                  }
+                ]
+              },
+              {
+                "type": "paragraph",
+                "children": [
+                  {
+                    "text": "Team Work  is based on how the team worked and how they supported in production and everything"
+                  }
+                ]
+              }
+            ],
+            "mode": "simple"
+          },
+          "confirmMessage": {
+            "value": "",
+            "mode": "simple"
+          },
+          "acknowledgeMsg": {
+            "value": "",
+            "mode": "simple"
+          },
+          "applicability": {
+            "value": "",
+            "mode": "query"
+          },
+          "skippable": {
+            "value": "",
+            "mode": "query"
+          },
+          "skipReprompt": {
+            "value": "",
+            "mode": "query"
+          },
+          "defaultValue": {
+            "value": "",
+            "mode": "simple"
+          },
+          "variableId": "cac6717f7f6040e8a314cd35b9f463b2",
+          "detailDescription": "",
+          "id": "e7366bdb4d624f119ad54139aca70994",
+          "stepType": "ChoicePrompt",
+          "hasCardHeader": false,
+          "cardMetadata": {
+            "mode": "card",
+            "metadataScript": "",
+            "cardTemplate": "",
+            "cardFields": {},
+            "cardDefinition": {}
+          },
+          "withNluUserInput": false,
+          "skipIfFulfilled": false
+        },
+        "2b06aa4951d9456fa6912a0e206bdb26": {
+          "name": "Overall rating",
+          "prompt": {
+            "value": [
+              {
+                "type": "paragraph",
+                "children": [
+                  {
+                    "text": "Please Rate the Whole Experience"
+                  }
+                ]
+              },
+              {
+                "type": "paragraph",
+                "children": [
+                  {
+                    "text": "Overall Rating  is based on how the Whole Experience"
+                  }
+                ]
+              }
+            ],
+            "mode": "simple"
+          },
+          "confirmMessage": {
+            "value": "",
+            "mode": "simple"
+          },
+          "acknowledgeMsg": {
+            "value": "",
+            "mode": "simple"
+          },
+          "applicability": {
+            "value": "",
+            "mode": "query"
+          },
+          "skippable": {
+            "value": "",
+            "mode": "query"
+          },
+          "skipReprompt": {
+            "value": "",
+            "mode": "query"
+          },
+          "defaultValue": {
+            "value": "",
+            "mode": "simple"
+          },
+          "variableId": "367a55aef3ae46aa92be8a6fad2e38ca",
+          "detailDescription": "",
+          "id": "2b06aa4951d9456fa6912a0e206bdb26",
+          "stepType": "ChoicePrompt",
+          "hasCardHeader": false,
+          "cardMetadata": {
+            "mode": "card",
+            "metadataScript": "",
+            "cardTemplate": "",
+            "cardFields": {},
+            "cardDefinition": {}
+          },
+          "withNluUserInput": false,
+          "skipIfFulfilled": false
+        },
+        "1299678830f1447e8d24d47e0af8be2c": {
+          "id": "1299678830f1447e8d24d47e0af8be2c",
+          "stepType": "TextPrompt",
+          "name": "Comments",
+          "prompt": {
+            "value": [
+              {
+                "type": "paragraph",
+                "children": [
+                  {
+                    "text": "Please provide comments (If you have)"
+                  }
+                ]
+              }
+            ],
+            "mode": "simple"
+          },
+          "confirmMessage": {
+            "value": "",
+            "mode": "simple"
+          },
+          "acknowledgeMsg": {
+            "value": "",
+            "mode": "simple"
+          },
+          "applicability": {
+            "value": "",
+            "mode": "query"
+          },
+          "skippable": {
+            "value": "",
+            "mode": "query"
+          },
+          "skipReprompt": {
+            "value": "",
+            "mode": "query"
+          },
+          "defaultValue": {
+            "value": "",
+            "mode": "simple"
+          },
+          "withNluUserInput": false,
+          "skipIfFulfilled": false,
+          "variableId": "dd139c60df9c4cafbb1286a43714697d",
+          "detailDescription": "",
+          "inputType": {
+            "format": "Text",
+            "script": ""
+          },
+          "requestFeedback": true
+        },
+        "8d7ee56ea1754359ab3af724d313606a": {
+          "id": "8d7ee56ea1754359ab3af724d313606a",
+          "stepType": "TextOutput",
+          "name": "End Note",
+          "secure": false,
+          "value": [
+            {
+              "value": [
+                {
+                  "type": "paragraph",
+                  "children": [
+                    {
+                      "text": "Thanks for your valuable feedback "
+                    },
+                    {
+                      "type": "emoji",
+                      "emoji": {
+                        "id": "smile",
+                        "name": "Smiling Face with Open Mouth and Smiling Eyes",
+                        "short_names": [
+                          "smile"
+                        ],
+                        "colons": ":smile:",
+                        "emoticons": [
+                          "C:",
+                          "c:",
+                          ":D",
+                          ":-D"
+                        ],
+                        "unified": "1f604",
+                        "skin": null,
+                        "native": "😄"
+                      },
+                      "children": [
+                        {
+                          "text": ""
+                        }
+                      ]
+                    },
+                    {
+                      "text": " "
+                    }
+                  ]
+                }
+              ],
+              "mode": "simple",
+              "_key": "6db23506fd8e4088b34553634907b870"
+            }
+          ],
+          "requestFeedback": true,
+          "applicability": {
+            "value": "",
+            "mode": "query"
+          }
+        },
+        "182fc1ad21b44cb1893a5154fd62fd0d": {
+          "id": "182fc1ad21b44cb1893a5154fd62fd0d",
+          "name": "Calculate",
+          "script": "(function execute() {\n    /* Code your scripted action here. For example, you might update a\n       record based on conditional logic:\n\n        if (vaVars.my_flag == 'say hello') {\n            gs.info('hi there');\n        } else {\n            gs.info('bye now');\n        }\n    */\n    var complexity = parseInt(vaInputs.complexity);\n    var innovations = parseInt(vaInputs.innovation);\n    var team_work = parseInt(vaInputs.team_work);\n    var overall_rateing = parseInt(vaInputs.overall_rating);\n    var posThreshold = 4;\n    var posCount = 0;\n\n    if (complexity &gt;= posThreshold &amp;&amp; innovations &gt;= posThreshold &amp;&amp; team_work &gt;= posThreshold &amp;&amp; overall_rateing &gt;= posThreshold) {\n       posCount = 1;\n   } else {\n       posCount = 0;\n   }\n   vaVars.posCount = posCount\n   //return posCount;\n})()\n",
+          "stepType": "ScriptAction",
+          "applicability": {
+            "value": "",
+            "mode": "query"
+          }
+        },
+        "85162ef86e6d429d98d4662926cbd9e8": {
+          "id": "85162ef86e6d429d98d4662926cbd9e8",
+          "stepType": "RecordOutput",
+          "name": "Submitted",
+          "variableId": "2423fff408154213b9497efa68293db2",
+          "cardTemplate": "General",
+          "cardFields": {},
+          "mode": "variable",
+          "tableName": "x_1346722_feedback_feedback",
+          "fields": [
+            "number",
+            "overall_rateing",
+            "application"
+          ],
+          "cardDefinition": {
+            "name": "Record",
+            "value": "General"
+          },
+          "requestFeedback": true,
+          "applicability": {
+            "value": "",
+            "mode": "query"
+          },
+          "condition": {
+            "mode": "glide_query",
+            "value": ""
+          }
+        }
+      },
+      "edges": [
+        {
+          "id": "281c78f465d34f96b51191a3b14e8b74",
+          "edgeType": "Edge",
+          "source": "305dd80bd2904193aa06b6228fb951c7",
+          "target": "19f3df3200834ba09be6fc114958be78",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "b01a9e81ddce4bf2b66fed4ecad98326",
+          "edgeType": "Edge",
+          "source": "858151f7367e462485475a97ceccc626",
+          "target": "305dd80bd2904193aa06b6228fb951c7",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "e39a78ab1650434c8bf1aeae017c160f",
+          "edgeType": "Edge",
+          "source": "19f3df3200834ba09be6fc114958be78",
+          "target": "8b03ac50cf0e4df691c572b16406ef84",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "6983f6222e9748cc8a03a01097161c7c",
+          "edgeType": "Branch",
+          "source": "8b03ac50cf0e4df691c572b16406ef84",
+          "target": "5e21473abfe044f4862e4363cca53d32",
+          "sourcePort": "",
+          "targetPort": "",
+          "expression": {
+            "value": "vaInputs.help_type=Feedback",
+            "mode": "query"
+          },
+          "label": "Is FeedBack?"
+        },
+        {
+          "id": "74a098db62dc4686b37d43ecf1b7dbb1",
+          "edgeType": "Edge",
+          "source": "5e21473abfe044f4862e4363cca53d32",
+          "target": "1aa61cc3bf8b490c8f8622ec051d3add",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "a569216e556a45e9af336f5e3676219d",
+          "edgeType": "Edge",
+          "source": "1aa61cc3bf8b490c8f8622ec051d3add",
+          "target": "ccdcd6f49ee140a39939434b43c5a186",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "41f10ea5551b4b9e9d219137839005e1",
+          "edgeType": "Edge",
+          "source": "ccdcd6f49ee140a39939434b43c5a186",
+          "target": "c70aee1e27dd4368ba3252f71d1b1cd5",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "33910ff466ae41d5b15ecd44cc46d2f4",
+          "edgeType": "Edge",
+          "source": "c70aee1e27dd4368ba3252f71d1b1cd5",
+          "target": "e7366bdb4d624f119ad54139aca70994",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "8fb7a0660e73410a9836bea2a490ca50",
+          "edgeType": "Edge",
+          "source": "e7366bdb4d624f119ad54139aca70994",
+          "target": "2b06aa4951d9456fa6912a0e206bdb26",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "7c9efb2c903e45e1a3b8d91d9c0dd450",
+          "edgeType": "Edge",
+          "source": "2b06aa4951d9456fa6912a0e206bdb26",
+          "target": "1299678830f1447e8d24d47e0af8be2c",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "260dc37756174aedb0bd9765cf10dc28",
+          "edgeType": "Edge",
+          "source": "8d7ee56ea1754359ab3af724d313606a",
+          "target": "18b4d101bd784c64b110385ebe8e74fc",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "c560b7f5d1ed480695b33ed275332401",
+          "edgeType": "Edge",
+          "source": "1299678830f1447e8d24d47e0af8be2c",
+          "target": "182fc1ad21b44cb1893a5154fd62fd0d",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "758e1bb924704599b7e39c696266df07",
+          "edgeType": "Edge",
+          "source": "182fc1ad21b44cb1893a5154fd62fd0d",
+          "target": "3f0a7e91b95a4a8b8b82c6934e2c93df",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "d6df1e5246c34d6c909561cb49dc9259",
+          "edgeType": "Edge",
+          "source": "3f0a7e91b95a4a8b8b82c6934e2c93df",
+          "target": "85162ef86e6d429d98d4662926cbd9e8",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "824e10fa84c44bbbb54e8cad6b142761",
+          "edgeType": "Edge",
+          "source": "85162ef86e6d429d98d4662926cbd9e8",
+          "target": "8d7ee56ea1754359ab3af724d313606a",
+          "sourcePort": "",
+          "targetPort": ""
+        }
+      ]
+    }
+  },
+  "variables": {
+    "current-user": {
+      "category": "vaInputs",
+      "id": "current-user",
+      "label": "User",
+      "name": "user",
+      "table": "sys_user",
+      "varType": "reference"
+    },
+    "5973a19b477c47aeb301c9fbf2c1303e": {
+      "id": "5973a19b477c47aeb301c9fbf2c1303e",
+      "name": "help_type",
+      "label": "Help Type",
+      "varType": "choice",
+      "choices": [
+        {
+          "label": "Feedback",
+          "value": "Feedback"
+        },
+        {
+          "label": "Search Knowledge Article",
+          "value": "Search Knowledge Article"
+        },
+        {
+          "label": "About Application",
+          "value": "About Application",
+          "checked": true,
+          "meta": {}
+        }
+      ],
+      "category": "vaInputs",
+      "nodeId": "19f3df3200834ba09be6fc114958be78",
+      "isHidden": false
+    },
+    "6af59c304bef47fbb28b8ba8547840f2": {
+      "id": "6af59c304bef47fbb28b8ba8547840f2",
+      "name": "complexity",
+      "label": "Complexity",
+      "varType": "choice",
+      "choices": [
+        {
+          "label": "Very Good",
+          "value": "5"
+        },
+        {
+          "label": "Good",
+          "value": "4"
+        },
+        {
+          "label": "Fair",
+          "value": "3",
+          "checked": true,
+          "meta": {}
+        },
+        {
+          "label": "Poor",
+          "value": "2",
+          "checked": true,
+          "meta": {}
+        },
+        {
+          "label": "Very Poor",
+          "value": "1",
+          "checked": true,
+          "meta": {}
+        }
+      ],
+      "category": "vaInputs",
+      "nodeId": "ccdcd6f49ee140a39939434b43c5a186",
+      "isHidden": false
+    },
+    "2423fff408154213b9497efa68293db2": {
+      "id": "2423fff408154213b9497efa68293db2",
+      "name": "create_feedback",
+      "label": "Create Feedback",
+      "varType": "reference",
+      "table": "x_1346722_feedback_feedback",
+      "inactive": false,
+      "category": "vaInputs",
+      "nodeId": "85162ef86e6d429d98d4662926cbd9e8",
+      "isHidden": false
+    },
+    "276b36d67c354932b9b435087673f7d6": {
+      "id": "276b36d67c354932b9b435087673f7d6",
+      "name": "application",
+      "label": "Application",
+      "varType": "choice",
+      "choices": [
+        {
+          "label": "SNOW",
+          "value": "SNOW"
+        },
+        {
+          "label": "Arab Bank",
+          "value": "Arab Bank"
+        },
+        {
+          "label": "MUFG",
+          "value": "MUFG",
+          "checked": true,
+          "meta": {}
+        },
+        {
+          "label": "Appian Solution",
+          "value": "Appian Solution",
+          "checked": true,
+          "meta": {}
+        }
+      ],
+      "category": "vaInputs",
+      "nodeId": "1aa61cc3bf8b490c8f8622ec051d3add",
+      "isHidden": false
+    },
+    "2e11594fcf9147238eb19351eca7bbfd": {
+      "id": "2e11594fcf9147238eb19351eca7bbfd",
+      "name": "innovation",
+      "label": "Innovation",
+      "varType": "choice",
+      "choices": [
+        {
+          "label": "Very Good",
+          "value": "5"
+        },
+        {
+          "label": "Good",
+          "value": "4"
+        },
+        {
+          "label": "Fair",
+          "value": "3",
+          "checked": true,
+          "meta": {}
+        },
+        {
+          "label": "Poor",
+          "value": "2",
+          "checked": true,
+          "meta": {}
+        },
+        {
+          "label": "Very Poor",
+          "value": "1",
+          "checked": true,
+          "meta": {}
+        }
+      ],
+      "category": "vaInputs",
+      "nodeId": "c70aee1e27dd4368ba3252f71d1b1cd5",
+      "isHidden": false
+    },
+    "cac6717f7f6040e8a314cd35b9f463b2": {
+      "id": "cac6717f7f6040e8a314cd35b9f463b2",
+      "name": "team_work",
+      "label": "Team Work",
+      "varType": "choice",
+      "choices": [
+        {
+          "label": "Very Good",
+          "value": "5"
+        },
+        {
+          "label": "Good",
+          "value": "4"
+        },
+        {
+          "label": "Fair",
+          "value": "3",
+          "checked": true,
+          "meta": {}
+        },
+        {
+          "label": "Poor",
+          "value": "2",
+          "checked": true,
+          "meta": {}
+        },
+        {
+          "label": "Very Poor",
+          "value": "1",
+          "checked": true,
+          "meta": {}
+        }
+      ],
+      "category": "vaInputs",
+      "nodeId": "e7366bdb4d624f119ad54139aca70994",
+      "isHidden": false
+    },
+    "367a55aef3ae46aa92be8a6fad2e38ca": {
+      "id": "367a55aef3ae46aa92be8a6fad2e38ca",
+      "name": "overall_rating",
+      "label": "Overall Rating",
+      "varType": "choice",
+      "choices": [
+        {
+          "label": "⭐⭐⭐⭐⭐",
+          "value": "5"
+        },
+        {
+          "label": "⭐⭐⭐⭐",
+          "value": "4"
+        },
+        {
+          "label": "⭐⭐⭐",
+          "value": "3",
+          "checked": true,
+          "meta": {}
+        },
+        {
+          "label": "⭐⭐",
+          "value": "2",
+          "checked": true,
+          "meta": {}
+        },
+        {
+          "label": "⭐",
+          "value": "1",
+          "checked": true,
+          "meta": {}
+        }
+      ],
+      "category": "vaInputs",
+      "nodeId": "2b06aa4951d9456fa6912a0e206bdb26",
+      "isHidden": false
+    },
+    "dd139c60df9c4cafbb1286a43714697d": {
+      "id": "dd139c60df9c4cafbb1286a43714697d",
+      "name": "comments",
+      "label": "Comments",
+      "varType": "string",
+      "secure": false,
+      "category": "vaInputs",
+      "encryptionHashFunction": "SHA-256",
+      "encryptionSalt": {
+        "value": "MTcxNDMyNTkxNzIyMCBWQSBEZXNpZ25lciBpcyBhd2Vzb21l",
+        "mode": "simple"
+      },
+      "nodeId": "1299678830f1447e8d24d47e0af8be2c",
+      "isHidden": false
+    },
+    "397ec3d36ec045138677d241f3d59543": {
+      "id": "397ec3d36ec045138677d241f3d59543",
+      "value": {
+        "mode": "script",
+        "value": "(function execute() {\n    /* return 'a default value'; */\n    return '';\n})()\n"
+      },
+      "name": "posCount",
+      "label": "posCount",
+      "varType": "script",
+      "category": "vaVars"
+    }
+  }
+}</graph>
+        <key_phrases>FVP Chat</key_phrases>
+        <library>false</library>
+        <live_agent>false</live_agent>
+        <model_type>nlu_keyword</model_type>
+        <modify_confirmation_enabled>false</modify_confirmation_enabled>
+        <name>FVP Chat</name>
+        <nlu_intent/>
+        <nlu_intent_label/>
+        <nlu_model/>
+        <nlu_model_label/>
+        <nlu_provider/>
+        <palette_label/>
+        <roles/>
+        <root_topic_id/>
+        <secure_custom_input_control>false</secure_custom_input_control>
+        <source_topic_id/>
+        <sys_class_name>sys_cb_topic</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-04-28 16:11:52</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_id>ff96ead293f90210ee61f5befaba10b7</sys_id>
+        <sys_mod_count>21</sys_mod_count>
+        <sys_name>FVP Chat</sys_name>
+        <sys_package display_value="Feedback" source="x_1346722_feedback">cd38c55a93310210ee61f5befaba10ce</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Feedback">cd38c55a93310210ee61f5befaba10ce</sys_scope>
+        <sys_update_name>sys_cb_topic_ff96ead293f90210ee61f5befaba10b7</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-05-06 20:28:05</sys_updated_on>
+        <triggerable_by_notification>false</triggerable_by_notification>
+        <type>STANDARD</type>
+    </sys_cb_topic>
+    <sys_translated_text action="delete_multiple" query="documentkey=ff96ead293f90210ee61f5befaba10b7"/>
+</record_update>

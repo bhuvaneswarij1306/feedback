@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_ui_view">
+    <sys_ui_view action="INSERT_OR_UPDATE">
+        <group/>
+        <hidden>false</hidden>
+        <name>catalog_how_can_we_help</name>
+        <roles/>
+        <sys_class_name>sys_ui_view</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-04-28 10:24:42</sys_created_on>
+        <sys_id>5227151e93710210ee61f5befaba1039</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>How can we help View</sys_name>
+        <sys_package display_value="Feedback" source="x_1346722_feedback">cd38c55a93310210ee61f5befaba10ce</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Feedback">cd38c55a93310210ee61f5befaba10ce</sys_scope>
+        <sys_update_name>sys_ui_view_5227151e93710210ee61f5befaba1039</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-04-28 10:24:42</sys_updated_on>
+        <title>How can we help View</title>
+        <user/>
+    </sys_ui_view>
+</record_update>

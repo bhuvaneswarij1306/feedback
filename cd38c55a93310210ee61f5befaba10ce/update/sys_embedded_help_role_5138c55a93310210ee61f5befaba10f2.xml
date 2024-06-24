@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_embedded_help_role">
+    <sys_embedded_help_role action="INSERT_OR_UPDATE">
+        <order>1000</order>
+        <role display_value="x_1346722_feedback.fvp_customer" name="x_1346722_feedback.fvp_customer">1d38c55a93310210ee61f5befaba10ef</role>
+        <sys_class_name>sys_embedded_help_role</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-04-28 09:19:22</sys_created_on>
+        <sys_id>5138c55a93310210ee61f5befaba10f2</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>1d38c55a93310210ee61f5befaba10ef</sys_name>
+        <sys_package display_value="Feedback" source="x_1346722_feedback">cd38c55a93310210ee61f5befaba10ce</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Feedback">cd38c55a93310210ee61f5befaba10ce</sys_scope>
+        <sys_update_name>sys_embedded_help_role_5138c55a93310210ee61f5befaba10f2</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-04-28 09:19:22</sys_updated_on>
+    </sys_embedded_help_role>
+</record_update>

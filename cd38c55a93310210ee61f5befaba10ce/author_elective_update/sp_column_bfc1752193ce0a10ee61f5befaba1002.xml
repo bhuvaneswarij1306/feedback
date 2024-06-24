@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_column">
+    <sp_column action="DELETE">
+        <class_name/>
+        <order>1</order>
+        <semantic_tag/>
+        <size>9</size>
+        <size_lg/>
+        <size_sm/>
+        <size_xs/>
+        <sp_row display_value="1">7bc1752193ce0a10ee61f5befaba1000</sp_row>
+        <sys_class_name>sp_column</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-05-08 14:41:22</sys_created_on>
+        <sys_id>bfc1752193ce0a10ee61f5befaba1002</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>1</sys_name>
+        <sys_package display_value="Feedback" source="x_1346722_feedback">cd38c55a93310210ee61f5befaba10ce</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Feedback">cd38c55a93310210ee61f5befaba10ce</sys_scope>
+        <sys_update_name>sp_column_bfc1752193ce0a10ee61f5befaba1002</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-05-08 14:41:22</sys_updated_on>
+    </sp_column>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="Feedback">cd38c55a93310210ee61f5befaba10ce</application>
+        <file_path/>
+        <instance_id>8afd14cb1b12b59439a54089bd4bcbcb</instance_id>
+        <instance_name>dev208512</instance_name>
+        <name>sp_column_bfc1752193ce0a10ee61f5befaba1002</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_column"><sp_column action="INSERT_OR_UPDATE"><class_name/><order>1</order><semantic_tag/><size>9</size><size_lg/><size_sm/><size_xs/><sp_row display_value="1">7bc1752193ce0a10ee61f5befaba1000</sp_row><sys_class_name>sp_column</sys_class_name><sys_created_by>admin</sys_created_by><sys_created_on>2024-05-08 14:41:22</sys_created_on><sys_id>bfc1752193ce0a10ee61f5befaba1002</sys_id><sys_mod_count>0</sys_mod_count><sys_name>1</sys_name><sys_package display_value="Feedback" source="x_1346722_feedback">cd38c55a93310210ee61f5befaba10ce</sys_package><sys_policy/><sys_scope display_value="Feedback">cd38c55a93310210ee61f5befaba10ce</sys_scope><sys_update_name>sp_column_bfc1752193ce0a10ee61f5befaba1002</sys_update_name><sys_updated_by>admin</sys_updated_by><sys_updated_on>2024-05-08 14:41:22</sys_updated_on></sp_column></record_update>]]></payload>
+        <payload_hash>-576089133</payload_hash>
+        <record_name>1</record_name>
+        <reverted_from/>
+        <source>4138c55a93310210ee61f5befaba10ec</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-05-08 14:41:23</sys_created_on>
+        <sys_id>fbc1752193ce0a10ee61f5befaba1004</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>18f58a6e23a0000001</sys_recorded_at>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-05-08 14:41:23</sys_updated_on>
+        <type>Column</type>
+        <update_guid>ffc1752114ce0a1030d72b3e63e13303</update_guid>
+        <update_guid_history>ffc1752114ce0a1030d72b3e63e13303:-576089133</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete display_value="1">b6e9f9a993ce0a10ee61f5befaba10cc</sys_audit_delete>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-05-08 15:16:49</sys_created_on>
+        <sys_db_object display_value="" name="sp_column">sp_column</sys_db_object>
+        <sys_id>63015670e23b4510b15f7d33520fea40</sys_id>
+        <sys_metadata>bfc1752193ce0a10ee61f5befaba1002</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>1</sys_name>
+        <sys_package display_value="Feedback" source="x_1346722_feedback">cd38c55a93310210ee61f5befaba10ce</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="Feedback">cd38c55a93310210ee61f5befaba10ce</sys_scope>
+        <sys_scope_delete display_value="">45cc0b7884124930a655d854c2ddc900</sys_scope_delete>
+        <sys_update_name>sp_column_bfc1752193ce0a10ee61f5befaba1002</sys_update_name>
+        <sys_update_version display_value="sp_column_bfc1752193ce0a10ee61f5befaba1002">fbc1752193ce0a10ee61f5befaba1004</sys_update_version>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-05-08 15:16:49</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

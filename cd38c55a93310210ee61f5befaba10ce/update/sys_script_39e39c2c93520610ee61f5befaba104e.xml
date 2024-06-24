@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_script">
+    <sys_script action="INSERT_OR_UPDATE">
+        <abort_action>false</abort_action>
+        <access>package_private</access>
+        <action_delete>false</action_delete>
+        <action_insert>true</action_insert>
+        <action_query>false</action_query>
+        <action_update>false</action_update>
+        <active>true</active>
+        <add_message>false</add_message>
+        <advanced>true</advanced>
+        <change_fields>false</change_fields>
+        <client_callable>false</client_callable>
+        <collection>x_1346722_feedback_feedback</collection>
+        <condition/>
+        <description/>
+        <execute_function>false</execute_function>
+        <filter_condition/>
+        <is_rest>false</is_rest>
+        <message/>
+        <name>CB: Audio &amp; Docs</name>
+        <order>100</order>
+        <priority>100</priority>
+        <rest_method/>
+        <rest_method_text/>
+        <rest_service/>
+        <rest_service_text/>
+        <rest_variables/>
+        <role_conditions/>
+        <script><![CDATA[(function executeRule(current, previous /*null when async*/) {
+
+	// Add your code here
+	var jsonString = current.getValue('string_json');
+    var jsonObject;
+    
+    try {
+        jsonObject = JSON.parse(jsonString);
+    } catch (e) {
+        gs.error("Error parsing JSON from field: " + e.message);
+        return;
+    }
+
+    // Example updates to apply
+    var updates = {
+     name: "Jane Smith",
+     age: 25,
+     city: "Los Angeles",
+     email: "janesmith@example.com"
+ };
+ gs.info('Im running ');
+
+    // Update multiple fields in the object
+    // for (var key in jsonObject) {
+    //     if (jsonObject.hasOwnProperty(key)) {
+    //         jsonObject[key] = jsonObject[key];
+    //     }
+    // }
+
+    // Convert the JavaScript object back to a JSON string
+    var updatedJsonString = JSON.stringify(updates);
+
+    // Set the updated JSON string back to the field
+    current.json = updatedJsonString;
+	current.update();
+
+})(current, previous);]]></script>
+        <sys_class_name>sys_script</sys_class_name>
+        <sys_created_by>nauman.ansari</sys_created_by>
+        <sys_created_on>2024-05-17 15:36:05</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>39e39c2c93520610ee61f5befaba104e</sys_id>
+        <sys_mod_count>3</sys_mod_count>
+        <sys_name>CB: Audio &amp; Docs</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="Feedback" source="x_1346722_feedback">cd38c55a93310210ee61f5befaba10ce</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Feedback">cd38c55a93310210ee61f5befaba10ce</sys_scope>
+        <sys_update_name>sys_script_39e39c2c93520610ee61f5befaba104e</sys_update_name>
+        <sys_updated_by>nauman.ansari</sys_updated_by>
+        <sys_updated_on>2024-05-17 15:43:04</sys_updated_on>
+        <template/>
+        <when>after</when>
+    </sys_script>
+    <sys_translated_text action="delete_multiple" query="documentkey=39e39c2c93520610ee61f5befaba104e"/>
+</record_update>

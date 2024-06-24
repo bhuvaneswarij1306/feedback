@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="par_dashboard_widget">
+    <par_dashboard_widget action="INSERT_OR_UPDATE">
+        <canvas display_value="">880ff4667ef54210ba224f9d3b50f4ec</canvas>
+        <component display_value="Single score">d24d53f60350de7a652caf3188a46ed2</component>
+        <component_props>{"scoreSize":"md","headingPosition":"top","sparklineStyle":"area","showScoreDate":false,"useRelativeScoreTime":false,"showScoreUpdateTime":true,"enableRealTimeUpdate":true,"showZero":true,"colorConfig":{"type":"singleColor","values":[{"color":"65b302c2a9fe3dba005150620828477b","iconColor":"65b302c2a9fe3dba005150620828477b","metric":"ZEdGaWJHVjBZWE5yTVRZMU16ZzBNakkxTVRVeE1RPT0xNjUzODQyMjUyNzkw","rules":[]}]},"dataSources":[{"isDatabaseView":false,"allowRealTime":true,"label":"Feedback","sourceType":"table","tableOrViewName":"x_1346722_feedback_feedback","filterQuery":"negative_review=1","preferredVisualizations":["d24d53f60350de7a652caf3188a46ed2"],"id":"dGFibGV0YXNrMTY1Mzg0MjI1MTUxMQ==","dataCategories":["trend","group","simple"]}],"showHeader":true,"showTotalAggregate":false,"showSubAggregate":false,"showFirstGroupAggregate":false,"showSecondGroupAggregate":false,"wrapTitle":false,"showHeaderSeparator":false,"headerTitle":"Negative feedback","showBorder":true,"bareBorder":false,"showDataPassthrough":false,"dataPassthrough":null,"metrics":[{"dataSource":"dGFibGV0YXNrMTY1Mzg0MjI1MTUxMQ==","id":"ZEdGaWJHVjBZWE5yTVRZMU16ZzBNakkxTVRVeE1RPT0xNjUzODQyMjUyNzkw","aggregateFunction":"COUNT","numberFormat":{"customFormat":false},"axisId":"primary"}],"groupBy":null,"sortBy":"value","sortByOrder":"desc","trendBy":null,"showChange":false,"showChangePercentage":false,"showTarget":false,"showForecast":false,"showForecastRange":false,"showTrend":false,"showConfidenceBand":false,"showGapPercentage":false,"showSparkline":false,"showMetricLabel":false,"showThreshold":false,"showComment":false,"followFilters":true,"showFilterIcon":true,"enableDrilldown":true,"showMaximumRange":false,"applyDateRange":false,"numberOfPeriods":3,"showAbsolutePeriod":false,"scoreType":null,"showChangeFrom":false,"period":"M","dateFormat":"default","hideMatrixAggregate":false,"newReporting":false,"configVersion":"23.0.0-ci-SNAPSHOT","filterConfigurations":[],"componentId":"9o1ls8n9","noDebounce":"","showDateRangeByDefault":false,"allowChangeDateRange":false,"scoreIcon":"emoji-slightly-negative-fill","iconStyle":"no-background"}</component_props>
+        <h>8</h>
+        <name/>
+        <stored_component/>
+        <sys_class_name>par_dashboard_widget</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-04-29 03:17:39</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>040ff466f2f542109e3a0b7f4e2febec</sys_id>
+        <sys_mod_count>4</sys_mod_count>
+        <sys_name/>
+        <sys_overrides/>
+        <sys_package display_value="Feedback" source="x_1346722_feedback">cd38c55a93310210ee61f5befaba10ce</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Feedback">cd38c55a93310210ee61f5befaba10ce</sys_scope>
+        <sys_update_name>par_dashboard_widget_040ff466f2f542109e3a0b7f4e2febec</sys_update_name>
+        <sys_updated_by>nauman.ansari</sys_updated_by>
+        <sys_updated_on>2024-05-29 04:19:59</sys_updated_on>
+        <visualization/>
+        <w>12</w>
+        <widget_props/>
+        <x>35</x>
+        <y>3</y>
+    </par_dashboard_widget>
+</record_update>

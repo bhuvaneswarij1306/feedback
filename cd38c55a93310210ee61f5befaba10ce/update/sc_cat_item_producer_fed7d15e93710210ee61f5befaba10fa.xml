@@ -2,6 +2,7 @@
     <sc_cat_item_producer action="INSERT_OR_UPDATE">
         <access_type>restricted</access_type>
         <active>true</active>
+        <additional_review>false</additional_review>
         <allow_edit>false</allow_edit>
         <availability>on_desktop</availability>
         <billable>false</billable>
@@ -9,6 +10,7 @@
         <category display_value="Customer's Feedback">458f99d693b10210ee61f5befaba10b3</category>
         <checked_out>false</checked_out>
         <cost>0</cost>
+        <create_universal_request>false</create_universal_request>
         <custom_cart/>
         <delivery_plan display_value="DEFAULT">523da512c611228900811a37c97c2014</delivery_plan>
         <delivery_plan_script/>
@@ -60,7 +62,7 @@
         <recurring_frequency/>
         <redirect_url>generated_record</redirect_url>
         <request_method/>
-        <roles/>
+        <roles>snc_internal</roles>
         <save_options/>
         <save_script><![CDATA[/**
 * This script is executed at every step save in Catalog Builder. 
@@ -88,14 +90,14 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2024-04-28 10:37:26</sys_created_on>
         <sys_id>fed7d15e93710210ee61f5befaba10fa</sys_id>
-        <sys_mod_count>7</sys_mod_count>
+        <sys_mod_count>10</sys_mod_count>
         <sys_name>Feedback</sys_name>
         <sys_package display_value="Feedback" source="x_1346722_feedback">cd38c55a93310210ee61f5befaba10ce</sys_package>
         <sys_policy/>
         <sys_scope display_value="Feedback">cd38c55a93310210ee61f5befaba10ce</sys_scope>
         <sys_update_name>sc_cat_item_producer_fed7d15e93710210ee61f5befaba10fa</sys_update_name>
-        <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2024-05-02 13:19:43</sys_updated_on>
+        <sys_updated_by>system</sys_updated_by>
+        <sys_updated_on>2024-05-10 05:12:05</sys_updated_on>
         <table_name>x_1346722_feedback_feedback</table_name>
         <taxonomy_topic/>
         <template/>
@@ -103,7 +105,7 @@
         <type>item</type>
         <use_sc_layout>true</use_sc_layout>
         <vendor/>
-        <version>6</version>
+        <version>8</version>
         <view/>
         <visible_bundle>true</visible_bundle>
         <visible_guide>true</visible_guide>

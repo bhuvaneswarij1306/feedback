@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_instance">
+    <sp_instance action="DELETE">
+        <active>true</active>
+        <class_name/>
+        <color>default</color>
+        <css/>
+        <glyph>tasks</glyph>
+        <id/>
+        <order>1</order>
+        <roles/>
+        <short_description/>
+        <size>md</size>
+        <sp_column display_value="1">3a461ee693bd4210ee61f5befaba10c3</sp_column>
+        <sp_widget display_value="KB News">ad2326a45b110200e23dc7ad31f91a1e</sp_widget>
+        <sys_class_name>sp_instance</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-04-29 09:39:01</sys_created_on>
+        <sys_id>ba461ee693bd4210ee61f5befaba10e1</sys_id>
+        <sys_mod_count>4</sys_mod_count>
+        <sys_name>News</sys_name>
+        <sys_package display_value="Feedback" source="x_1346722_feedback">cd38c55a93310210ee61f5befaba10ce</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Feedback">cd38c55a93310210ee61f5befaba10ce</sys_scope>
+        <sys_update_name>sp_instance_ba461ee693bd4210ee61f5befaba10e1</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-05-08 14:33:58</sys_updated_on>
+        <title>News</title>
+        <url/>
+        <widget_parameters/>
+    </sp_instance>
+    <sys_translated_text action="DELETE" query="documentkey=ba461ee693bd4210ee61f5befaba10e1"/>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="Feedback">cd38c55a93310210ee61f5befaba10ce</application>
+        <file_path/>
+        <instance_id>8afd14cb1b12b59439a54089bd4bcbcb</instance_id>
+        <instance_name>dev208512</instance_name>
+        <name>sp_instance_ba461ee693bd4210ee61f5befaba10e1</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_instance"><sp_instance action="INSERT_OR_UPDATE"><active>true</active><class_name/><color>default</color><css/><glyph>tasks</glyph><id/><order>1</order><roles/><short_description/><size>md</size><sp_column display_value="1">3a461ee693bd4210ee61f5befaba10c3</sp_column><sp_widget display_value="KB News">ad2326a45b110200e23dc7ad31f91a1e</sp_widget><sys_class_name>sp_instance</sys_class_name><sys_created_by>admin</sys_created_by><sys_created_on>2024-04-29 09:39:01</sys_created_on><sys_id>ba461ee693bd4210ee61f5befaba10e1</sys_id><sys_mod_count>4</sys_mod_count><sys_name>News</sys_name><sys_package display_value="Feedback" source="x_1346722_feedback">cd38c55a93310210ee61f5befaba10ce</sys_package><sys_policy/><sys_scope display_value="Feedback">cd38c55a93310210ee61f5befaba10ce</sys_scope><sys_update_name>sp_instance_ba461ee693bd4210ee61f5befaba10e1</sys_update_name><sys_updated_by>admin</sys_updated_by><sys_updated_on>2024-05-08 14:33:58</sys_updated_on><title>News</title><url/><widget_parameters/></sp_instance><sys_translated_text action="delete_multiple" query="documentkey=ba461ee693bd4210ee61f5befaba10e1"/></record_update>]]></payload>
+        <payload_hash>1445264808</payload_hash>
+        <record_name>News</record_name>
+        <reverted_from/>
+        <source>4138c55a93310210ee61f5befaba10ec</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-05-08 14:33:58</sys_created_on>
+        <sys_id>df10fd6d938e0a10ee61f5befaba109e</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>18f58a019180000001</sys_recorded_at>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-05-08 14:33:58</sys_updated_on>
+        <type>Instance</type>
+        <update_guid>5710fd6dfa8e0a10e59cb49c37f3d09e</update_guid>
+        <update_guid_history>5710fd6dfa8e0a10e59cb49c37f3d09e:1445264808,48ec249dcf06c610d87b7f92ec0d8163:-314190167,4e1ca05d1406c61028dfd6c88f12411d:-2073645142,636ab1ffcd310210d11bfacca40c1600:-314190167,fe461ee600bd4210dfb7b6eb20ea2be2:1445264808</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete display_value="News">64b1b12193ce0a10ee61f5befaba1052</sys_audit_delete>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-05-08 14:40:53</sys_created_on>
+        <sys_db_object display_value="" name="sp_instance">sp_instance</sys_db_object>
+        <sys_id>01b323202f644c1398ab8f35f64032c9</sys_id>
+        <sys_metadata>ba461ee693bd4210ee61f5befaba10e1</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>News</sys_name>
+        <sys_package display_value="Feedback" source="x_1346722_feedback">cd38c55a93310210ee61f5befaba10ce</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="Feedback">cd38c55a93310210ee61f5befaba10ce</sys_scope>
+        <sys_scope_delete display_value="">45cc0b7884124930a655d854c2ddc900</sys_scope_delete>
+        <sys_update_name>sp_instance_ba461ee693bd4210ee61f5befaba10e1</sys_update_name>
+        <sys_update_version display_value="sp_instance_ba461ee693bd4210ee61f5befaba10e1">df10fd6d938e0a10ee61f5befaba109e</sys_update_version>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-05-08 14:40:53</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

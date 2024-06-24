@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_instance_table">
+    <sp_instance_table action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <class_name/>
+        <color>primary</color>
+        <css/>
+        <display_field/>
+        <field_list>application,complexity,innovations,team_work,overall_rateing,owner</field_list>
+        <filter table="x_1346722_feedback_feedback">sys_created_by=javascript: gs.getUserName()<item endquery="false" field="sys_created_by" goto="false" newquery="false" operator="=" or="false" value="javascript: gs.getUserName()"/>
+        </filter>
+        <glyph>file-text</glyph>
+        <id/>
+        <maximum_entries>10</maximum_entries>
+        <order>2</order>
+        <order_by>number</order_by>
+        <order_direction>desc</order_direction>
+        <roles/>
+        <short_description/>
+        <size>md</size>
+        <sp_column display_value="1">ea04f9b793310210ee61f5befaba1078</sp_column>
+        <sp_page display_value="form">ed5f8ec347730200ba13a5554ee49046</sp_page>
+        <sp_widget display_value="Data Table from Instance Definition">38058ff1cb11020000f8d856634c9c8c</sp_widget>
+        <sys_class_name>sp_instance_table</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-05-08 14:10:04</sys_created_on>
+        <sys_id>51aaa9a5938e0a10ee61f5befaba1011</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name>My Feedbacks</sys_name>
+        <sys_package display_value="Feedback" source="x_1346722_feedback">cd38c55a93310210ee61f5befaba10ce</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Feedback">cd38c55a93310210ee61f5befaba10ce</sys_scope>
+        <sys_update_name>sp_instance_table_51aaa9a5938e0a10ee61f5befaba1011</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-05-08 14:14:55</sys_updated_on>
+        <table>x_1346722_feedback_feedback</table>
+        <title>My Feedbacks</title>
+        <url/>
+        <widget_parameters/>
+    </sp_instance_table>
+    <sys_translated_text action="delete_multiple" query="documentkey=51aaa9a5938e0a10ee61f5befaba1011"/>
+</record_update>

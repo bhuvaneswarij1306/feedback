@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_ux_app_route">
+    <sys_ux_app_route action="INSERT_OR_UPDATE">
+        <app_config display_value="Feedback Value Workspace App Config">840ff4665df54210bc0f60e53375c4f4</app_config>
+        <description/>
+        <extension_point/>
+        <fields>sysid</fields>
+        <icon/>
+        <name>Visualization Designer</name>
+        <optional_parameters/>
+        <order>0</order>
+        <parent_macroponent display_value="Workspace App Shell">c276387cc331101080d6d3658940ddd2</parent_macroponent>
+        <parent_macroponent_composition_element_id/>
+        <route_type>visualization-designer</route_type>
+        <screen_type display_value="Visualization Designer">8c0ff46695f5421081ee4c2b75faece8</screen_type>
+        <sys_class_name>sys_ux_app_route</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-04-29 03:17:40</sys_created_on>
+        <sys_id>c80ff46623f542104c342c6bc3b04be8</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Visualization Designer</sys_name>
+        <sys_package display_value="Feedback" source="x_1346722_feedback">cd38c55a93310210ee61f5befaba10ce</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Feedback">cd38c55a93310210ee61f5befaba10ce</sys_scope>
+        <sys_update_name>sys_ux_app_route_c80ff46623f542104c342c6bc3b04be8</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-04-29 03:17:40</sys_updated_on>
+    </sys_ux_app_route>
+    <sys_translated_text action="delete_multiple" query="documentkey=c80ff46623f542104c342c6bc3b04be8"/>
+</record_update>

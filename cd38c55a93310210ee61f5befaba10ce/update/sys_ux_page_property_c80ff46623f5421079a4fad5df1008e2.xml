@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_ux_page_property">
+    <sys_ux_page_property action="INSERT_OR_UPDATE">
+        <choices/>
+        <description/>
+        <name>actionConfigId</name>
+        <page display_value="Feedback Value Workspace">840ff46652f54210d27b74364dad09f3</page>
+        <required_translations>[]</required_translations>
+        <route/>
+        <suffix/>
+        <sys_class_name>sys_ux_page_property</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-04-29 03:17:39</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>global</sys_domain_path>
+        <sys_id>c80ff46623f5421079a4fad5df1008e2</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>actionConfigId</sys_name>
+        <sys_package display_value="Feedback" source="x_1346722_feedback">cd38c55a93310210ee61f5befaba10ce</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Feedback">cd38c55a93310210ee61f5befaba10ce</sys_scope>
+        <sys_update_name>sys_ux_page_property_c80ff46623f5421079a4fad5df1008e2</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-04-29 03:17:39</sys_updated_on>
+        <type>string</type>
+        <unique_name>x_1346722_feedback.840ff46652f54210d27b74364dad09f3.root.actionConfigId</unique_name>
+        <value>df28e3db0f1210107d20409dc4767ee0</value>
+    </sys_ux_page_property>
+    <sys_translated_text action="delete_multiple" query="documentkey=c80ff46623f5421079a4fad5df1008e2"/>
+</record_update>

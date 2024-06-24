@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_instance">
+    <sp_instance action="DELETE">
+        <active>true</active>
+        <class_name/>
+        <color>default</color>
+        <css/>
+        <glyph/>
+        <id/>
+        <order>2</order>
+        <roles/>
+        <short_description/>
+        <size>md</size>
+        <sp_column display_value="1">3a461ee693bd4210ee61f5befaba10c3</sp_column>
+        <sp_widget display_value="Current Status">1e699082d7001200a9addd173e24d4e3</sp_widget>
+        <sys_class_name>sp_instance</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-04-29 09:39:01</sys_created_on>
+        <sys_id>be461ee693bd4210ee61f5befaba10c5</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_name>Current Status</sys_name>
+        <sys_package display_value="Feedback" source="x_1346722_feedback">cd38c55a93310210ee61f5befaba10ce</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Feedback">cd38c55a93310210ee61f5befaba10ce</sys_scope>
+        <sys_update_name>sp_instance_be461ee693bd4210ee61f5befaba10c5</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-05-07 14:58:19</sys_updated_on>
+        <title>Current Status</title>
+        <url/>
+        <widget_parameters><![CDATA[{
+	"standalone": {
+		"value": "true",
+		"displayValue": "true"
+	},
+	"show_outage_details": {
+		"value": "",
+		"displayValue": ""
+	}
+}]]></widget_parameters>
+    </sp_instance>
+    <sys_translated_text action="DELETE" query="documentkey=be461ee693bd4210ee61f5befaba10c5"/>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="Feedback">cd38c55a93310210ee61f5befaba10ce</application>
+        <file_path/>
+        <instance_id>8afd14cb1b12b59439a54089bd4bcbcb</instance_id>
+        <instance_name>dev208512</instance_name>
+        <name>sp_instance_be461ee693bd4210ee61f5befaba10c5</name>
+        <payload>&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;record_update table="sp_instance"&gt;&lt;sp_instance action="INSERT_OR_UPDATE"&gt;&lt;active&gt;true&lt;/active&gt;&lt;class_name/&gt;&lt;color&gt;default&lt;/color&gt;&lt;css/&gt;&lt;glyph/&gt;&lt;id/&gt;&lt;order&gt;2&lt;/order&gt;&lt;roles/&gt;&lt;short_description/&gt;&lt;size&gt;md&lt;/size&gt;&lt;sp_column display_value="1"&gt;3a461ee693bd4210ee61f5befaba10c3&lt;/sp_column&gt;&lt;sp_widget display_value="Current Status"&gt;1e699082d7001200a9addd173e24d4e3&lt;/sp_widget&gt;&lt;sys_class_name&gt;sp_instance&lt;/sys_class_name&gt;&lt;sys_created_by&gt;admin&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2024-04-29 09:39:01&lt;/sys_created_on&gt;&lt;sys_id&gt;be461ee693bd4210ee61f5befaba10c5&lt;/sys_id&gt;&lt;sys_mod_count&gt;2&lt;/sys_mod_count&gt;&lt;sys_name&gt;Current Status&lt;/sys_name&gt;&lt;sys_package display_value="Feedback" source="x_1346722_feedback"&gt;cd38c55a93310210ee61f5befaba10ce&lt;/sys_package&gt;&lt;sys_policy/&gt;&lt;sys_scope display_value="Feedback"&gt;cd38c55a93310210ee61f5befaba10ce&lt;/sys_scope&gt;&lt;sys_update_name&gt;sp_instance_be461ee693bd4210ee61f5befaba10c5&lt;/sys_update_name&gt;&lt;sys_updated_by&gt;admin&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2024-05-07 14:58:19&lt;/sys_updated_on&gt;&lt;title&gt;Current Status&lt;/title&gt;&lt;url/&gt;&lt;widget_parameters&gt;&lt;![CDATA[{
+	"standalone": {
+		"value": "true",
+		"displayValue": "true"
+	},
+	"show_outage_details": {
+		"value": "",
+		"displayValue": ""
+	}
+}]]&gt;&lt;/widget_parameters&gt;&lt;/sp_instance&gt;&lt;sys_translated_text action="delete_multiple" query="documentkey=be461ee693bd4210ee61f5befaba10c5"/&gt;&lt;/record_update&gt;</payload>
+        <payload_hash>28402205</payload_hash>
+        <record_name>Current Status</record_name>
+        <reverted_from/>
+        <source>4138c55a93310210ee61f5befaba10ec</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-05-07 14:58:19</sys_created_on>
+        <sys_id>0e1c605d9306c610ee61f5befaba10f4</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>18f5390077c0000001</sys_recorded_at>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-05-07 14:58:19</sys_updated_on>
+        <type>Instance</type>
+        <update_guid>821c605d7d06c6100c29ca52843042f4</update_guid>
+        <update_guid_history>821c605d7d06c6100c29ca52843042f4:28402205,e76a71ff03310210dfcaed06356ccdfb:-109754562,b6461ee65dbd42108df990401eed30e0:-247911329</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete display_value="Current Status">b7dc249d9306c610ee61f5befaba103d</sys_audit_delete>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-05-07 15:01:43</sys_created_on>
+        <sys_db_object display_value="" name="sp_instance">sp_instance</sys_db_object>
+        <sys_id>237641c38e6847109d5f7dfb9007e590</sys_id>
+        <sys_metadata>be461ee693bd4210ee61f5befaba10c5</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Current Status</sys_name>
+        <sys_package display_value="Feedback" source="x_1346722_feedback">cd38c55a93310210ee61f5befaba10ce</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="Feedback">cd38c55a93310210ee61f5befaba10ce</sys_scope>
+        <sys_scope_delete display_value="">45cc0b7884124930a655d854c2ddc900</sys_scope_delete>
+        <sys_update_name>sp_instance_be461ee693bd4210ee61f5befaba10c5</sys_update_name>
+        <sys_update_version display_value="sp_instance_be461ee693bd4210ee61f5befaba10c5">0e1c605d9306c610ee61f5befaba10f4</sys_update_version>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-05-07 15:01:43</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

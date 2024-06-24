@@ -1,0 +1,316 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_header_footer">
+    <sp_header_footer action="INSERT_OR_UPDATE">
+        <category>custom</category>
+        <client_script><![CDATA[api.controller=function() {
+  /* widget controller */
+  var c = this;
+};]]></client_script>
+        <controller_as>c</controller_as>
+        <css>@import url(//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css);&#13;
+}&#13;
+@import url(https://fonts.googleapis.com/css?family=Titillium+Web:300);&#13;
+.fa-2x {&#13;
+font-size: 2em;&#13;
+}&#13;
+.fa {&#13;
+position: relative;&#13;
+display: table-cell;&#13;
+width: 60px;&#13;
+height: 36px;&#13;
+text-align: center;&#13;
+vertical-align: middle;&#13;
+font-size:25px;&#13;
+}&#13;
+&#13;
+.main-menu::-webkit-scrollbar {&#13;
+  display: none;&#13;
+}&#13;
+&#13;
+.main-menu:hover,nav.main-menu.expanded {&#13;
+width:250px;&#13;
+overflow:visible;&#13;
+}&#13;
+&#13;
+.main-menu {&#13;
+background:#333579;&#13;
+border-right:1px solid #e5e5e5;&#13;
+position:absolute;&#13;
+top:0;&#13;
+bottom:0;&#13;
+height:100%;&#13;
+left:0;&#13;
+width:60px;&#13;
+overflow:hidden;&#13;
+-webkit-transition:width .05s linear;&#13;
+transition:width .05s linear;&#13;
+-webkit-transform:translateZ(0) scale(1,1);&#13;
+z-index:1000;&#13;
+}&#13;
+&#13;
+.main-menu&gt;ul {&#13;
+margin:7px 0;&#13;
+}&#13;
+&#13;
+.main-menu li {&#13;
+position:relative;&#13;
+display:block;&#13;
+width:250px;&#13;
+margin-bottom: 20px;&#13;
+}&#13;
+&#13;
+.main-menu li&gt;a {&#13;
+position:relative;&#13;
+display:table;&#13;
+border-collapse:collapse;&#13;
+border-spacing:0;&#13;
+color:#fff;&#13;
+ font-family: times new roman;&#13;
+font-size: 16px;&#13;
+text-decoration:none;&#13;
+-webkit-transform:translateZ(0) scale(1,1);&#13;
+-webkit-transition:all .1s linear;&#13;
+transition:all .1s linear;&#13;
+  &#13;
+}&#13;
+&#13;
+.main-menu .nav-icon {&#13;
+position:relative;&#13;
+display:table-cell;&#13;
+width:60px;&#13;
+height:36px;&#13;
+text-align:center;&#13;
+vertical-align:middle;&#13;
+font-size:18px;&#13;
+}&#13;
+&#13;
+.main-menu .nav-text {&#13;
+position:relative;&#13;
+display:table-cell;&#13;
+vertical-align:middle;&#13;
+width:190px;&#13;
+  font-family: 'Titillium Web', sans-serif;&#13;
+}&#13;
+&#13;
+.main-menu&gt;ul.logout {&#13;
+position:absolute;&#13;
+left:0;&#13;
+bottom:0;&#13;
+}&#13;
+&#13;
+.no-touch .scrollable.hover {&#13;
+overflow-y:hidden;&#13;
+}&#13;
+&#13;
+.no-touch .scrollable.hover:hover {&#13;
+overflow-y:auto;&#13;
+overflow:visible;&#13;
+}&#13;
+&#13;
+a:hover,a:focus {&#13;
+text-decoration:none;&#13;
+}&#13;
+&#13;
+nav {&#13;
+-webkit-user-select:none;&#13;
+-moz-user-select:none;&#13;
+-ms-user-select:none;&#13;
+-o-user-select:none;&#13;
+user-select:none;&#13;
+}&#13;
+&#13;
+nav ul,nav li {&#13;
+outline:0;&#13;
+margin:0;&#13;
+color: #fff;&#13;
+padding:0;&#13;
+}&#13;
+.main-menu li:hover&gt;a,nav.main-menu li.active&gt;a,.dropdown-menu&gt;li&gt;a:hover,.dropdown-menu&gt;li&gt;a:focus,.dropdown-menu&gt;.active&gt;a,.dropdown-menu&gt;.active&gt;a:hover,.dropdown-menu&gt;.active&gt;a:focus,.no-touch .dashboard-page nav.dashboard-menu ul li:hover a,.dashboard-page nav.dashboard-menu ul li.active a {&#13;
+color:#F0EDEE;&#13;
+background-color:#3C3E7F;&#13;
+}&#13;
+.area {&#13;
+float: left;&#13;
+background: #e2e2e2;&#13;
+width: 100%;&#13;
+height: 100%;&#13;
+}&#13;
+@font-face {&#13;
+  font-family: 'Titillium Web';&#13;
+  font-style: normal;&#13;
+  font-weight: 300;&#13;
+  src: local('Titillium WebLight'), local('TitilliumWeb-Light'), url(http://themes.googleusercontent.com/static/fonts/titilliumweb/v2/anMUvcNT0H1YN4FII8wpr24bNCNEoFTpS2BTjF6FB5E.woff) format('woff');&#13;
+}&#13;
+</css>
+        <data_table>sp_instance</data_table>
+        <demo_data/>
+        <description/>
+        <docs/>
+        <field_list/>
+        <has_preview>false</has_preview>
+        <id/>
+        <internal>false</internal>
+        <link><![CDATA[function link(scope, element, attrs, controller) {
+  
+}]]></link>
+        <name>FVP Header</name>
+        <option_schema/>
+        <public>false</public>
+        <roles/>
+        <script><![CDATA[(function() {
+    /* populate the 'data' object */
+    /* e.g., data.table = $sp.getValue('table'); */
+    data.result = false;
+    if (gs.hasRole("admin") || gs.hasRole('x_1025229_lcms.admin')) {
+        data.result = true;
+    }
+    data.rev_result = false;
+    if (gs.hasRole('x_1025229_lcms.reviewer')) {
+        data.rev_result = true;
+    }
+
+    data.func_result = false;
+    if (gs.hasRole('x_1025229_lcms.functional')) {
+        data.func_result = true;
+    }
+
+})();]]></script>
+        <servicenow>false</servicenow>
+        <static>false</static>
+        <sys_class_name>sp_header_footer</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-05-08 14:30:18</sys_created_on>
+        <sys_id>571fe52d938e0a10ee61f5befaba1088</sys_id>
+        <sys_mod_count>10</sys_mod_count>
+        <sys_name>FVP Header</sys_name>
+        <sys_package display_value="Feedback" source="x_1346722_feedback">cd38c55a93310210ee61f5befaba10ce</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Feedback">cd38c55a93310210ee61f5befaba10ce</sys_scope>
+        <sys_update_name>sp_header_footer_571fe52d938e0a10ee61f5befaba1088</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-05-13 02:38:08</sys_updated_on>
+        <template><![CDATA[<div>
+    <!-- your widget template -->
+    <div class="area"></div>
+    <nav class="main-menu" style="position:fixed;height: calc(100%);overflow: auto;">
+        <ul>
+            <li>
+                <a href="https://dev208512.service-now.com/fvp?id=fvp_index">
+                    <i class="fa fa-home fa-2x"></i>
+                    <h3>Feedback Value Portal</h3>
+                </a>
+            </li>
+            <li class="has-subnav">
+                <a href="https://dev208512.service-now.com/fvp?id=sc_cat_item&sys_id=fed7d15e93710210ee61f5befaba10fa&referrer=popular_items">
+                <i class="fa fa-plus fa-2x"></i>
+                <span class="nav-text">
+                Create New Feedback
+                </span>
+                </a>
+            </li>
+            <li class="has-subnav">
+                <a href="https://dev208512.service-now.com/fvp?id=feedback_page">
+                <i class="fa fa-ticket fa-2x"></i>
+                <span class="nav-text">
+                My Feedbacks
+                </span>
+                </a>
+            </li>
+            <!--<li class="has-subnav" ng-if= (data.func_result)>
+                <a href="https://dev167757.service-now.com/cms?id=cms_mytask_page">
+                <i class="fa fa-check-circle fa-2x"></i>
+                <span class="nav-text">
+                My Task
+                </span>
+                </a>
+            </li>
+            <li class="has-subnav" ng-if= (data.rev_result)>
+                <a href="https://dev167757.service-now.com/cms?id=cms_approvals">
+                <i class="fa fa-check-square fa-2x"></i>
+                <span class="nav-text">
+                My Approval
+                </span>
+                </a>
+            </li>-->
+            <li class="has-subnav">
+                <a href="https://dev208512.service-now.com/fvp?id=fvp_report">
+                <i class="fa fa-pie-chart fa-2x"></i>
+                <span class="nav-text">
+                Dashboard
+                </span>
+                </a>
+            </li>
+            <li class="has-subnav">
+                <a href="https://dev208512.service-now.com/fvp?id=sc_category">
+                <i class="fa fa-file fa-2x"></i>
+                <span class="nav-text">
+                Catalog
+                </span>
+                </a>
+            </li>
+            <li class="has-subnav">
+                <a href="https://dev208512.service-now.com/fvp?id=kb_view2">
+                <i class="fa fa-comments fa-2x"></i>
+                <span class="nav-text">
+                Knowledge Base
+                </span>
+                </a>
+            </li>
+          <li class="has-subnav" ng-if= data.result>
+                <a href="https://dev208512.service-now.com/fvp?id=sc_category&sys_id=e15706fc0a0a0aa7007fc21e1ab70c2f">
+                <i class="fa fa-user-plus fa-2x"></i>
+                <span class="nav-text">
+                Get Help
+                </span>
+                </a>
+            </li>
+            <!--<li ng-if= data.result>
+                <a>
+                    <i class="fa fa-user fa-2x"></i>
+                    <h3>Admin Action</h3>
+                </a>
+            </li>
+            <li class="has-subnav" ng-if= data.result>
+                <a href="https://dev167757.service-now.com/cms?id=cms_record_page_group_member">
+                <i class="fa fa-user-plus fa-2x"></i>
+                <span class="nav-text">
+                Add/View Member
+                </span>
+                </a>
+            </li>
+            <li class="has-subnav" ng-if= data.result>
+                <a href="https://dev167757.service-now.com/cms?id=cms_record_page_roles">
+                <i class="fa fa-cog fa-2x"></i>
+                <span class="nav-text">
+                Add/View Role
+                </span>
+                </a>
+            </li>
+            <li class="has-subnav" ng-if= data.result>
+                <a href="https://dev167757.service-now.com/cms?id=cms_record_page_choice">
+                <i class="fa fa-file-text-o fa-2x"></i>
+                <span class="nav-text">
+                Add/View/Remove Choice
+                </span>
+                </a>
+            </li>
+            <li class="has-subnav" ng-if= data.result>
+                <a href="https://dev167757.service-now.com/cms?id=cms_record_page_user">
+                <i class="fa fa fa-minus fa-2x"></i>
+                <span class="nav-text">
+                Delete Member/Role
+                </span>
+                </a>
+            </li>
+            <li class="has-subnav" ng-if= data.result>
+                <a href="https://dev167757.service-now.com/cms?id=cms_reassign_task">
+                <i class="fa fa-clock-o fa-2x"></i>
+                <span class="nav-text">
+                Reassign Inactive Task
+                </span>
+                </a>
+            </li>-->
+        </ul>
+    </nav>
+</div>]]></template>
+    </sp_header_footer>
+</record_update>

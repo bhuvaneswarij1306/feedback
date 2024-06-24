@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_ux_form_action">
+    <sys_ux_form_action action="INSERT_OR_UPDATE">
+        <action_type>ui_action</action_type>
+        <active>true</active>
+        <declarative_action/>
+        <description/>
+        <name>Edit</name>
+        <specificity>10</specificity>
+        <sys_class_name>sys_ux_form_action</sys_class_name>
+        <sys_created_by>nauman.ansari</sys_created_by>
+        <sys_created_on>2024-05-28 09:12:19</sys_created_on>
+        <sys_id>9646e377939a0a10ee61f5befaba10ee</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Edit</sys_name>
+        <sys_package display_value="Feedback" source="x_1346722_feedback">cd38c55a93310210ee61f5befaba10ce</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Feedback">cd38c55a93310210ee61f5befaba10ce</sys_scope>
+        <sys_update_name>sys_ux_form_action_9646e377939a0a10ee61f5befaba10ee</sys_update_name>
+        <sys_updated_by>nauman.ansari</sys_updated_by>
+        <sys_updated_on>2024-05-28 09:12:19</sys_updated_on>
+        <table>x_1346722_feedback_question</table>
+        <ui_action display_value="Edit">48852777939a0a10ee61f5befaba10e3</ui_action>
+    </sys_ux_form_action>
+    <sys_translated_text action="delete_multiple" query="documentkey=9646e377939a0a10ee61f5befaba10ee"/>
+</record_update>

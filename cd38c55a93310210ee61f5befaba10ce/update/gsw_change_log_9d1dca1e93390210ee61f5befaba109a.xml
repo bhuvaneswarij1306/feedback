@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="gsw_change_log">
+    <gsw_change_log action="INSERT_OR_UPDATE">
+        <change_date>2024-04-28 14:20:18</change_date>
+        <changed_by display_value="System Administrator">6816f79cc0a8016401c5a33be04be441</changed_by>
+        <content display_value="Agent Affinity">1832897353de10108d1eddeeff7b1284</content>
+        <related_change_log_entry/>
+        <related_task_entry/>
+        <sys_class_name>gsw_change_log</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-04-28 14:20:18</sys_created_on>
+        <sys_id>9d1dca1e93390210ee61f5befaba109a</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>2024-04-28 14:20:18</sys_name>
+        <sys_package display_value="Feedback" source="x_1346722_feedback">cd38c55a93310210ee61f5befaba10ce</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Feedback">cd38c55a93310210ee61f5befaba10ce</sys_scope>
+        <sys_update_name>gsw_change_log_9d1dca1e93390210ee61f5befaba109a</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-04-28 14:20:18</sys_updated_on>
+        <type>4</type>
+    </gsw_change_log>
+</record_update>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_agent_chat_config">
+    <sp_agent_chat_config action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <name>FVP Chat</name>
+        <order>100</order>
+        <portal>5ea31dd693710210ee61f5befaba10ca</portal>
+        <public>false</public>
+        <roles/>
+        <server_script><![CDATA[(function($sp) {
+	return {
+		live_agent_queue: $sp.getDisplayValue('sp_chat_queue'),
+		branding_key: 'fvp_branding',
+		skip_load_history: true,
+		//topic: 'ff96ead293f90210ee61f5befaba10b7'  //mine, use your own!
+
+		};
+})($sp);]]></server_script>
+        <sys_class_name>sp_agent_chat_config</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-04-28 14:56:04</sys_created_on>
+        <sys_id>95259a1a93790210ee61f5befaba105b</sys_id>
+        <sys_mod_count>4</sys_mod_count>
+        <sys_name>FVP Chat</sys_name>
+        <sys_package display_value="Feedback" source="x_1346722_feedback">cd38c55a93310210ee61f5befaba10ce</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Feedback">cd38c55a93310210ee61f5befaba10ce</sys_scope>
+        <sys_update_name>sp_agent_chat_config_95259a1a93790210ee61f5befaba105b</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-05-08 21:14:46</sys_updated_on>
+    </sp_agent_chat_config>
+    <sys_translated_text action="delete_multiple" query="documentkey=95259a1a93790210ee61f5befaba105b"/>
+</record_update>

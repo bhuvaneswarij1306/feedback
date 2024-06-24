@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_user_role">
+    <sys_user_role action="INSERT_OR_UPDATE">
+        <assignable_by/>
+        <can_delegate>true</can_delegate>
+        <description>Customer Role</description>
+        <elevated_privilege>false</elevated_privilege>
+        <grantable>true</grantable>
+        <includes_roles/>
+        <name>x_1346722_feedback.fvp_customer</name>
+        <scoped_admin>false</scoped_admin>
+        <suffix>fvp_customer</suffix>
+        <sys_class_name>sys_user_role</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-04-28 09:19:22</sys_created_on>
+        <sys_id>1d38c55a93310210ee61f5befaba10ef</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>x_1346722_feedback.fvp_customer</sys_name>
+        <sys_package display_value="Feedback" source="x_1346722_feedback">cd38c55a93310210ee61f5befaba10ce</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Feedback">cd38c55a93310210ee61f5befaba10ce</sys_scope>
+        <sys_update_name>sys_user_role_1d38c55a93310210ee61f5befaba10ef</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-04-28 09:19:22</sys_updated_on>
+    </sys_user_role>
+</record_update>

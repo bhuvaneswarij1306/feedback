@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_ui_message">
+    <sys_ui_message action="INSERT_OR_UPDATE">
+        <application>Virtual Agent</application>
+        <code/>
+        <commented_message/>
+        <key>search knowledge article</key>
+        <language>en</language>
+        <message>Search Knowledge Article</message>
+        <sys_class_name>sys_ui_message</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-04-28 17:39:46</sys_created_on>
+        <sys_id>5fba3e5e933d0210ee61f5befaba1017</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>search knowledge article</sys_name>
+        <sys_package display_value="Feedback" source="x_1346722_feedback">cd38c55a93310210ee61f5befaba10ce</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Feedback">cd38c55a93310210ee61f5befaba10ce</sys_scope>
+        <sys_update_name>sys_ui_message_5fba3e5e933d0210ee61f5befaba1017</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-04-28 17:39:46</sys_updated_on>
+    </sys_ui_message>
+</record_update>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element db_object_id="069df7b8930e4610ee61f5befaba104f" label="Application" max_length="40" name="x_1346722_feedback_application" type="collection">
+        <element attributes="edge_encryption_enabled=true" default="javascript:global.getNextObjNumberPadded();" label="Number" max_length="40" name="number" read_only="true" type="string"/>
+        <element label="Delivery manager" max_length="40" name="delivery_manager" type="string"/>
+        <element label="Feedback" max_length="40" name="feedback" type="string"/>
+        <element label="TDM" max_length="40" name="tdm" type="string"/>
+        <element display="true" label="Application name" max_length="40" name="application_name" type="string"/>
+    </element>
+</database>

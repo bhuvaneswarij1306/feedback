@@ -1,0 +1,922 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_rel_widget_clone">
+    <sp_rel_widget_clone action="DELETE">
+        <child display_value="Copy of HRMadrid Header">d34530d59346c610ee61f5befaba1094</child>
+        <cloned>2024-05-07 15:38:32</cloned>
+        <last_validated>2024-05-07 15:38:32</last_validated>
+        <parent display_value="HRMadrid Header">a8d107b473131300c629e1e54cf6a703</parent>
+        <payload>&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;sp_widget&gt;&lt;category/&gt;&lt;client_script&gt;&lt;![CDATA[function ($rootScope, $scope, snRecordWatcher, spUtil, $location, $uibModal, cabrillo, $timeout) {
+	var c = this;
+	$scope.userID = $scope.user.sys_id;
+	$scope.todosPopupId = c.data.isMobile?'#popup_todos_mobile':'';
+	$scope.casesPopupId = c.data.isMobile?'#popup_cases_mobile':'';
+	$scope.popupType = c.data.isMobile?'collapse':'dropdown';
+
+	if (cabrillo.isNative())
+		$scope.isViewNative = true;
+	
+	$scope.$on("$locationChangeSuccess", function(event, data){
+		if(c.data.isMobile){
+			if($('div#popup_todos_mobile').is(":visible"))
+				$('li &gt; a#todos_popup').click();
+			else if($('div#popup_cases_mobile').is(":visible"))
+			$('li &gt; a#cases_popup').click();
+		} else {
+			$('li.open &gt; a#cases_popup').click();
+			$('li.open &gt; a#todos_popup').click();	
+		}
+	})
+
+	$scope.$on('sp_loading_indicator', function(e, value) {
+		$scope.loadingIndicator = value;
+	});
+	
+	/* Record Watchers */ 
+	spUtil.recordWatch($scope, "sn_hr_core_task", "assigned_to=" + $scope.userID, function(watcherUpdate) {
+		if ($scope.isRelevantRecordUpdate(watcherUpdate.data, 'sn_hr_core_task'))
+			$scope.reloadHeader($scope.data.ACTION_TODO_COUNT);
+	});
+	
+	spUtil.recordWatch($scope, "sn_hr_core_case", "opened_for=" + $scope.userID, function(watcherUpdate) {
+		if ($scope.isRelevantRecordUpdate(watcherUpdate.data, 'sn_hr_core_case'))
+			$scope.reloadHeader($scope.data.ACTION_TODO_COUNT);
+	});
+	
+	spUtil.recordWatch($scope, "sysapproval_approver", "approver=" + $scope.userID, function(watcherUpdate) {
+		if ($scope.isRelevantRecordUpdate(watcherUpdate.data, 'sysapproval_approver'))
+			$scope.reloadHeader($scope.data.ACTION_TODO_COUNT);
+	});
+	
+	$scope.reloadHeader = function(actionName) {
+		c.data.action = actionName || c.data.ACTION_LOAD_CASES;
+		c.server.update();
+	};
+	
+	$scope.openPopUp = function() {
+		var url = "$chat_support.do?queueID=" + $scope.data.connect_support_queue_id;
+		var popup = window.open (url, "popup", "width=900, height=600"); 
+	};
+
+	$scope.openLogin = function () {
+		$scope.modalInstance = $uibModal.open({
+			templateUrl: 'modalLogin',
+			scope: $scope
+		});
+	};
+	
+	$rootScope.$on("update.searchpage", function(e, searchPage){
+		$scope.searchPage = searchPage;
+  });
+	
+	$rootScope.$on('sp.avatar_changed', function() {
+		$scope.userID = "";
+		$timeout(function(){
+			$scope.userID = $scope.user.sys_id;
+		});
+	});
+
+	$scope.isHomepage = function() {
+		if (!$scope.page.id)
+			return true;
+
+		if ($scope.page.id == $scope.portal.homepage_dv)
+			return true;
+
+		return false;
+	};
+	
+	$scope.isRelevantRecordUpdate = function(watcherData, tableName) {
+		var operation = watcherData.operation;
+		if (operation == 'delete')
+			return true;
+		
+		if (watcherData.record) {
+			var active = watcherData.record.state.value;
+			var activeChanged = watcherData.changes.indexOf('active') &gt;= 0;
+			var state = watcherData.record.state.value;
+			var stateChanged = watcherData.changes.indexOf('state') &gt;= 0;
+			var userChanges = false;
+			
+			//Check if user changes
+			if (tableName == 'sysapproval_approver')
+				userChanges = watcherData.changes.indexOf('approver') &gt;= 0;
+			else if (tableName == 'sn_hr_core_task')
+				userChanges = watcherData.changes.indexOf('assigned_to') &gt;= 0;
+			else if (tableName == 'sn_hr_core_case')
+				userChanges = watcherData.changes.indexOf('opened_for') &gt;= 0;
+
+			//Check insertion
+			if (operation == 'insert') {
+				if (tableName == 'sysapproval_approver')
+					return state == 'requested';
+				else if (tableName == 'sn_hr_core_task')
+					return active &amp;&amp; (state == '10' || state == '18');
+				else if (tableName == 'sn_hr_core_case')
+					return active &amp;&amp; state == '20';
+			}
+			else if (operation == 'update') {
+				if (tableName == 'sysapproval_approver')
+					return stateChanged || userChanges;
+				else if (tableName == 'sn_hr_core_task' || tableName == 'sn_hr_core_case')
+					return activeChanged || stateChanged || userChanges;
+			}
+		}
+		
+		return false;
+	};
+	
+	$(document).ready(function() {
+		$scope.reloadHeader();				
+	});	
+}]]&gt;&lt;/client_script&gt;&lt;controller_as&gt;c&lt;/controller_as&gt;&lt;css&gt;.dropdown-menu.case-menu {
+    right: auto;
+    left: 0;
+    padding: 0;
+    width: 450px;
+    background: $color-lightest;
+    overflow-y: hidden;
+}
+
+.label-as-badge {
+  font-size: 12px;
+  margin-left: 5px;
+}
+
+.navbar {
+  transition: 250ms opacity ease-in-out; 
+  -webkit-transition: 250ms opacity ease-in-out; 
+  border: 0;
+  border-bottom: 4px solid $sp-navbar-divider-color;
+}
+
+.navbar-fade {
+  opacity: 0.4;
+}
+
+.navbar-inverse .navbar-toggle {
+  border-color: rgba(255, 255, 255, 0.25);
+}
+
+.nav &amp;gt; li &amp;gt; a {
+  max-height: 56px;
+}
+
+.navbar-brand {
+  height: 50px;
+  padding: 0;
+}
+
+.navbar-brand img, .navbar-brand span {
+  margin-left: $sp-logo-margin-x;
+  margin-right: $sp-logo-margin-x;
+  margin-top: $sp-logo-margin-y;
+  margin-bottom: $sp-logo-margin-y;
+  display: block;
+  max-height: $sp-logo-max-height;
+  max-width: $sp-logo-max-width;
+  position: relative;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+.breadcrumb-container {
+  background-color: $panel-bg;
+}
+
+/* for mobile app */
+.navbar-inverse.is-native {
+  background-color: #405060;
+}
+
+nav{
+ margin-bottom: 0px;
+ border-radius: 0px; 
+}
+
+.navbar-collapse {
+  padding-right: 0px;
+}
+
+.case-menu div#widget-tabs-2 {
+	border: none;
+}
+
+.case-menu div#widget-tabs-2 &amp;amp;gt; .panel-heading {
+	border: none;
+  bottom-border: 1px solid $border;
+}
+
+ul.nav.navbar-nav&amp;gt;div.header-loader{
+	display: none;
+}
+
+.typeahead-search {
+  width: 13%;
+  padding-top:13px;
+}
+
+/* Fix for Service Portal - Header Poorly Aligned in Safari */
+@media screen and (min-width: 768px) {
+  .navbar-collapse {
+    display: flex !important;
+  }
+}
+
+
+@media (min-width : 320px) and (max-width : 360px) {
+  .dropdown-menu.case-menu {
+    width: 320px;
+  }
+}
+
+@media (min-width : 360px) and (max-width : 450px) {
+  .dropdown-menu.case-menu {
+    width: 360px;
+  }
+}
+
+@media (min-width : 320px) and (max-width : 767px) {
+  .typeahead-search {
+    width: 100%;
+  }
+  .navbar-nav {
+    display:block;
+    margin-top:0px;
+    margin-bottom:0px;
+  }
+  .popup-edit {
+    background: $color-lightest;
+    position: fixed;
+    top:0; 
+    height:100%;
+    margin-top: 0;
+    max-height:100%;
+    width:100%
+  }
+  .navbar-collapse-label {
+    float: right;
+    margin-right: -5px;
+    margin-top: -7px;
+  }
+  button&amp;gt;span.label {
+    padding: .2em .5em .2em;
+  }  
+}
+
+@media (min-width : 768px) and (max-width : 1024px) {
+  .navbar-nav &amp;gt; li &amp;gt; a {
+    padding:20px 10px;
+  }
+}&lt;/css&gt;&lt;data_table&gt;sp_instance&lt;/data_table&gt;&lt;demo_data/&gt;&lt;description/&gt;&lt;docs/&gt;&lt;field_list/&gt;&lt;has_preview&gt;false&lt;/has_preview&gt;&lt;id&gt;hrmadrid-header&lt;/id&gt;&lt;internal&gt;false&lt;/internal&gt;&lt;link&gt;&lt;![CDATA[function(scope, element) {	
+	$(element).on('click.nav','.navbar-collapse.in',function(e) {	
+		var target = $(e.target);
+		if (target.is('a')) {
+			// collapse mobile nav if clicked an anchor
+			$(this).removeClass('in').addClass('collapse');
+			return;
+		}
+		
+		// if neither target nor parent is an anchor, do nothing
+		if (!target.parent().is('a'))
+			return;
+		
+		// collapse mobile nav if target is part of a submenu
+		if (target.parents("ul.dropdown-menu").length &gt; 0)
+			$(this).removeClass('in').addClass('collapse');
+	});
+}]]&gt;&lt;/link&gt;&lt;name&gt;HRMadrid Header&lt;/name&gt;&lt;option_schema/&gt;&lt;public&gt;false&lt;/public&gt;&lt;roles/&gt;&lt;script&gt;&lt;![CDATA[(function () {
+	data.ACTION_TODO_COUNT = 'update_todo_count';
+	data.ACTION_LOAD_CASES = 'load_cases';
+	data.isMobile = gs.isMobile();
+	var isHrCoreActive = GlidePluginManager().isActive('com.sn_hr_core');
+	if (isHrCoreActive) {
+		data.isHrCoreActive = true;
+		//Load To-dos count
+		if (!input || input.action == data.ACTION_TODO_COUNT) {
+			data.todoCount = new sn_hr_sp.hr_DashboardUtil().getHeaderTodoCount();
+			if (input)
+				return;
+		}
+		//Load To-dos widget if requested
+		if (input &amp;&amp; input.action == data.ACTION_LOAD_CASES) {
+			data.todoCaseList = $sp.getWidget('hrk-header-case-list', {isTodoList : true});
+			data.caseList = $sp.getWidget('hrk-header-case-list', {isTodoList : false});
+			if (input)
+			return;
+		} 	
+
+		// HR Profile
+		var gr = new GlideRecord('sn_hr_core_profile');
+		gr.addQuery('user', gs.getUserID());
+		gr.query();
+		if (!gr.next() &amp;&amp; new GlideRecord('sys_user').get(gs.getUserID())) {
+			gr.setValue('user', gs.getUserID());
+			gr.insert();
+		}
+		data.email = gs.getProperty('sn_hr_core.hr_email');
+	}
+	// populate the 'data' object
+	data.link = '?id=hri_user_profile&amp;sys_id='+ gs.getUserID();
+
+	// Check for chat properties
+	data.chatSupportEnabled = gs.getProperty('glide.connect.enabled', 'false') == 'true' &amp;&amp; gs.getProperty('glide.connect.support.enabled', 'false') == 'true';
+
+	// Defines the support queue ID that will be linked to by the Live Chat link in header
+	data.login_page = $sp.getValue('login_page');
+	var menu = $sp.getValue("sp_rectangle_menu");
+	data.menu = $sp.getWidgetFromInstance(menu);
+	if (data.menu &amp;&amp; data.menu.data) {
+		data.menu.data.replace = true;
+		// Hide login if menu already has link to login
+		data.hasLogin = false;
+		if (data.menu.data.menu.items) {
+			for(var i in data.menu.data.menu.items) {
+				var item = data.menu.data.menu.items[i];
+				if (item.type == 'page' &amp;&amp; item.sp_page == data.login_page)
+					data.hasLogin = true;
+			}
+		}
+	}
+
+	data.loginWidget = $sp.getWidgetFromInstance('login-modal');
+	data.typeahead = $sp.getWidgetFromInstance('typeahead-search');
+})();]]&gt;&lt;/script&gt;&lt;servicenow&gt;false&lt;/servicenow&gt;&lt;sys_class_name&gt;sp_header_footer&lt;/sys_class_name&gt;&lt;sys_created_by&gt;admin&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2018-07-12 09:51:19&lt;/sys_created_on&gt;&lt;sys_id&gt;a8d107b473131300c629e1e54cf6a703&lt;/sys_id&gt;&lt;sys_mod_count&gt;42&lt;/sys_mod_count&gt;&lt;sys_name&gt;HRMadrid Header&lt;/sys_name&gt;&lt;sys_package display_value="Employee Center Core" source="sn_hr_sp"&gt;3d1da2705b021200a4656ede91f91ab6&lt;/sys_package&gt;&lt;sys_policy/&gt;&lt;sys_scope display_value="Employee Center Core"&gt;3d1da2705b021200a4656ede91f91ab6&lt;/sys_scope&gt;&lt;sys_update_name&gt;sp_header_footer_a8d107b473131300c629e1e54cf6a703&lt;/sys_update_name&gt;&lt;sys_updated_by&gt;admin&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2021-01-19 07:38:16&lt;/sys_updated_on&gt;&lt;template&gt;&lt;![CDATA[&lt;div&gt;
+  &lt;!-- To-dos, Cases popup for mobile view --&gt;
+  &lt;div ng-if="data.isMobile" class="popup-edit popover bottom" id="popup_todos_mobile"&gt;
+    &lt;sp-widget widget="::data.todoCaseList"&gt;&lt;/sp-widget&gt;
+  &lt;/div&gt;
+  &lt;div ng-if="data.isMobile" class="popup-edit popover bottom" id="popup_cases_mobile"&gt;
+    &lt;sp-widget widget="::data.caseList"&gt;&lt;/sp-widget&gt;
+  &lt;/div&gt;
+  &lt;!-- Nav bar menu items starts--&gt;
+  &lt;nav class="navbar-inverse" ng-class="::{'navbar':!isViewNative, 'is-native': isViewNative}" role="navigation"&gt;
+    &lt;div ng-show="::!isViewNative" class="navbar-header"&gt;
+      &lt;a class="navbar-brand" ng-if="::!portal.logo" href="?id={{::portal.homepage_dv}}"&gt;&lt;span&gt;{{::portal.title}}&lt;/span&gt;&lt;/a&gt;
+      &lt;a class="navbar-brand navbar-brand-logo" ng-if="::portal.logo" href="?id={{::portal.homepage_dv}}"&gt;
+        &lt;img ng-src="{{::portal.logo}}" alt="{{::portal.title}}"/&gt;
+      &lt;/a&gt;
+      &lt;button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#sp-nav-bar"&gt;
+        &lt;span ng-show="data.todoCount &gt; 0" class="label label-as-badge label-primary navbar-collapse-label"&gt;{{data.todoCount}}&lt;/span&gt;
+        &lt;span class="sr-only"&gt;${Toggle navigation}&lt;/span&gt;
+        &lt;span class="icon-bar"&gt;&lt;/span&gt;
+        &lt;span class="icon-bar"&gt;&lt;/span&gt;
+        &lt;span class="icon-bar"&gt;&lt;/span&gt;
+      &lt;/button&gt;
+    &lt;/div&gt;
+   &lt;div class="navbar-header typeahead-search"&gt;
+      &lt;sp-widget widget="data.typeahead"&gt;&lt;/sp-widget&gt;
+   &lt;/div&gt;
+    &lt;div sp-navbar-toggle="" class="collapse navbar-collapse navbar-right" id="sp-nav-bar"&gt;
+      &lt;!-- Include The Menu --&gt;
+      &lt;ul ng-if="::user.logged_in" class="nav navbar-nav"&gt;
+        &lt;!-- Fix to show loading indicator at first place in the menu bar--&gt;
+        &lt;li&gt;
+          &lt;a&gt;
+            &lt;div class="header-loader" ng-show="loadingIndicator" id="hr_loading_indicator"&gt;
+              &lt;div class="hidden-xs sp-loading-indicator la-sm"&gt;
+                &lt;div&gt;&lt;/div&gt;
+                &lt;div&gt;&lt;/div&gt;
+                &lt;div&gt;&lt;/div&gt;
+              &lt;/div&gt;
+            &lt;/div&gt;
+          &lt;/a&gt;
+        &lt;/li&gt;
+        &lt;!--  To-Dos  --&gt;
+        &lt;li ng-if="data.isHrCoreActive"&gt;
+          &lt;a href="javascript:void(0)" data-toggle="{{popupType}}" id="todos_popup" data-target="{{todosPopupId}}" aria-label="${To-dos}"&gt;
+            &lt;span ng-bind-html="'${To-dos}'" aria-hidden="true"&gt;&lt;/span&gt;
+            &lt;span ng-show="data.todoCount &gt; 0" class="label label-as-badge label-primary"&gt;{{data.todoCount}}&lt;/span&gt;
+          &lt;/a&gt;
+          &lt;div ng-if="!data.isMobile" class="dropdown-menu case-menu" &gt;
+            &lt;sp-widget widget="::data.todoCaseList"&gt;&lt;/sp-widget&gt;
+          &lt;/div&gt;
+        &lt;/li&gt;
+        &lt;!--  Cases  --&gt;
+        &lt;li ng-if="data.isHrCoreActive"&gt;
+          &lt;a href="javascript:void(0)" data-toggle="{{popupType}}" id="cases_popup" data-target="{{casesPopupId}}" aria-label="${Cases}"&gt;
+            &lt;span ng-bind-html="'${Cases}'" aria-hidden="true"&gt;&lt;/span&gt;
+          &lt;/a&gt;
+          &lt;div ng-if="!data.isMobile" class="dropdown-menu case-menu" &gt;
+            &lt;sp-widget widget="::data.caseList"&gt;&lt;/sp-widget&gt;
+          &lt;/div&gt;
+        &lt;/li&gt;
+      &lt;/ul&gt;
+      &lt;sp-widget widget="data.menu"&gt;&lt;/sp-widget&gt;
+      &lt;ul ng-if="::(!user.logged_in &amp;&amp; page.id != portal.login_page_dv &amp;&amp; !data.hasLogin)" class="nav navbar-nav"&gt;
+        &lt;li&gt;&lt;a href ng-click="openLogin()"&gt;${Login}&lt;/a&gt;
+        &lt;/li&gt;
+      &lt;/ul&gt;
+      &lt;ul ng-if="::user.logged_in" class="nav navbar-nav"&gt;
+        &lt;!-- chat, avatar, and logout --&gt;
+        &lt;li ng-if="data.chatSupportEnabled == true &amp;&amp; data.isHrCoreActive"&gt;&lt;a target="chat" href="/$chat_support.do?queueID=fde232209f22120047a2d126c42e70ab"&gt;&lt;i alt="${Chat with HR}" class="fa fa-comments-o"&gt;&lt;/i&gt; ${Chat with HR}&lt;/a&gt;
+        &lt;/li&gt;
+        &lt;li ng-if="data.isHrCoreActive"&gt;
+          &lt;a href="mailto:{{data.email}}"&gt;&lt;i alt="${Email HR}" class="fa fa-envelope-o"&gt;&lt;/i&gt; ${Email HR}&lt;/a&gt;
+        &lt;/li&gt;
+        &lt;li class="dropdown hidden-xs"&gt;
+          &lt;a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown"&gt;
+            &lt;span class="navbar-avatar"&gt;&lt;sn-avatar class="avatar-small-medium" show-presence="false" primary="user.sys_id" /&gt;&lt;/span&gt;
+            &lt;span class="visible-lg-inline" aria-hidden="true"&gt;{{user.name}}&lt;/span&gt;
+          &lt;/a&gt;
+          &lt;ul class="dropdown-menu"&gt;
+            &lt;li&gt;&lt;a href="{{data.link}}"&gt;${Profile}&lt;/a&gt;
+            &lt;/li&gt;
+            &lt;li&gt;&lt;a href="{{::portal.logoutUrl}}"&gt;${Logout}&lt;/a&gt;
+            &lt;/li&gt;
+          &lt;/ul&gt;
+        &lt;/li&gt;
+        &lt;li class="visible-xs-block"&gt;&lt;a href="{{data.link}}"&gt;&lt;span class="navbar-avatar"&gt;&lt;sn-avatar class="avatar-small-medium" show-presence="false" primary="user.sys_id" /&gt;&lt;/span&gt;&lt;span aria-hidden="true"&gt;{{user.name}}&lt;/span&gt;&lt;/a&gt;
+        &lt;/li&gt;
+        &lt;li class="visible-xs-block"&gt;&lt;a href="{{::portal.logoutUrl}}"&gt;${Logout}&lt;/a&gt;
+        &lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/div&gt;
+  &lt;/nav&gt;
+&lt;/div&gt;]]&gt;&lt;/template&gt;&lt;/sp_widget&gt;</payload>
+        <sys_class_name>sp_rel_widget_clone</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-05-07 15:38:32</sys_created_on>
+        <sys_id>db4574599346c610ee61f5befaba1047</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>d34530d59346c610ee61f5befaba1094</sys_name>
+        <sys_package display_value="Feedback" source="x_1346722_feedback">cd38c55a93310210ee61f5befaba10ce</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Feedback">cd38c55a93310210ee61f5befaba10ce</sys_scope>
+        <sys_update_name>sp_rel_widget_clone_db4574599346c610ee61f5befaba1047</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-05-07 15:38:32</sys_updated_on>
+    </sp_rel_widget_clone>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="Feedback">cd38c55a93310210ee61f5befaba10ce</application>
+        <file_path/>
+        <instance_id>8afd14cb1b12b59439a54089bd4bcbcb</instance_id>
+        <instance_name>dev208512</instance_name>
+        <name>sp_rel_widget_clone_db4574599346c610ee61f5befaba1047</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_rel_widget_clone"><sp_rel_widget_clone action="INSERT_OR_UPDATE"><child display_value="Copy of HRMadrid Header">d34530d59346c610ee61f5befaba1094</child><cloned>2024-05-07 15:38:32</cloned><last_validated>2024-05-07 15:38:32</last_validated><parent display_value="HRMadrid Header">a8d107b473131300c629e1e54cf6a703</parent><payload>&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;sp_widget&gt;&lt;category/&gt;&lt;client_script&gt;&lt;![CDATA[function ($rootScope, $scope, snRecordWatcher, spUtil, $location, $uibModal, cabrillo, $timeout) {
+	var c = this;
+	$scope.userID = $scope.user.sys_id;
+	$scope.todosPopupId = c.data.isMobile?'#popup_todos_mobile':'';
+	$scope.casesPopupId = c.data.isMobile?'#popup_cases_mobile':'';
+	$scope.popupType = c.data.isMobile?'collapse':'dropdown';
+
+	if (cabrillo.isNative())
+		$scope.isViewNative = true;
+	
+	$scope.$on("$locationChangeSuccess", function(event, data){
+		if(c.data.isMobile){
+			if($('div#popup_todos_mobile').is(":visible"))
+				$('li &gt; a#todos_popup').click();
+			else if($('div#popup_cases_mobile').is(":visible"))
+			$('li &gt; a#cases_popup').click();
+		} else {
+			$('li.open &gt; a#cases_popup').click();
+			$('li.open &gt; a#todos_popup').click();	
+		}
+	})
+
+	$scope.$on('sp_loading_indicator', function(e, value) {
+		$scope.loadingIndicator = value;
+	});
+	
+	/* Record Watchers */ 
+	spUtil.recordWatch($scope, "sn_hr_core_task", "assigned_to=" + $scope.userID, function(watcherUpdate) {
+		if ($scope.isRelevantRecordUpdate(watcherUpdate.data, 'sn_hr_core_task'))
+			$scope.reloadHeader($scope.data.ACTION_TODO_COUNT);
+	});
+	
+	spUtil.recordWatch($scope, "sn_hr_core_case", "opened_for=" + $scope.userID, function(watcherUpdate) {
+		if ($scope.isRelevantRecordUpdate(watcherUpdate.data, 'sn_hr_core_case'))
+			$scope.reloadHeader($scope.data.ACTION_TODO_COUNT);
+	});
+	
+	spUtil.recordWatch($scope, "sysapproval_approver", "approver=" + $scope.userID, function(watcherUpdate) {
+		if ($scope.isRelevantRecordUpdate(watcherUpdate.data, 'sysapproval_approver'))
+			$scope.reloadHeader($scope.data.ACTION_TODO_COUNT);
+	});
+	
+	$scope.reloadHeader = function(actionName) {
+		c.data.action = actionName || c.data.ACTION_LOAD_CASES;
+		c.server.update();
+	};
+	
+	$scope.openPopUp = function() {
+		var url = "$chat_support.do?queueID=" + $scope.data.connect_support_queue_id;
+		var popup = window.open (url, "popup", "width=900, height=600"); 
+	};
+
+	$scope.openLogin = function () {
+		$scope.modalInstance = $uibModal.open({
+			templateUrl: 'modalLogin',
+			scope: $scope
+		});
+	};
+	
+	$rootScope.$on("update.searchpage", function(e, searchPage){
+		$scope.searchPage = searchPage;
+  });
+	
+	$rootScope.$on('sp.avatar_changed', function() {
+		$scope.userID = "";
+		$timeout(function(){
+			$scope.userID = $scope.user.sys_id;
+		});
+	});
+
+	$scope.isHomepage = function() {
+		if (!$scope.page.id)
+			return true;
+
+		if ($scope.page.id == $scope.portal.homepage_dv)
+			return true;
+
+		return false;
+	};
+	
+	$scope.isRelevantRecordUpdate = function(watcherData, tableName) {
+		var operation = watcherData.operation;
+		if (operation == 'delete')
+			return true;
+		
+		if (watcherData.record) {
+			var active = watcherData.record.state.value;
+			var activeChanged = watcherData.changes.indexOf('active') &gt;= 0;
+			var state = watcherData.record.state.value;
+			var stateChanged = watcherData.changes.indexOf('state') &gt;= 0;
+			var userChanges = false;
+			
+			//Check if user changes
+			if (tableName == 'sysapproval_approver')
+				userChanges = watcherData.changes.indexOf('approver') &gt;= 0;
+			else if (tableName == 'sn_hr_core_task')
+				userChanges = watcherData.changes.indexOf('assigned_to') &gt;= 0;
+			else if (tableName == 'sn_hr_core_case')
+				userChanges = watcherData.changes.indexOf('opened_for') &gt;= 0;
+
+			//Check insertion
+			if (operation == 'insert') {
+				if (tableName == 'sysapproval_approver')
+					return state == 'requested';
+				else if (tableName == 'sn_hr_core_task')
+					return active &amp;&amp; (state == '10' || state == '18');
+				else if (tableName == 'sn_hr_core_case')
+					return active &amp;&amp; state == '20';
+			}
+			else if (operation == 'update') {
+				if (tableName == 'sysapproval_approver')
+					return stateChanged || userChanges;
+				else if (tableName == 'sn_hr_core_task' || tableName == 'sn_hr_core_case')
+					return activeChanged || stateChanged || userChanges;
+			}
+		}
+		
+		return false;
+	};
+	
+	$(document).ready(function() {
+		$scope.reloadHeader();				
+	});	
+}]]&gt;&lt;/client_script&gt;&lt;controller_as&gt;c&lt;/controller_as&gt;&lt;css&gt;.dropdown-menu.case-menu {
+    right: auto;
+    left: 0;
+    padding: 0;
+    width: 450px;
+    background: $color-lightest;
+    overflow-y: hidden;
+}
+
+.label-as-badge {
+  font-size: 12px;
+  margin-left: 5px;
+}
+
+.navbar {
+  transition: 250ms opacity ease-in-out; 
+  -webkit-transition: 250ms opacity ease-in-out; 
+  border: 0;
+  border-bottom: 4px solid $sp-navbar-divider-color;
+}
+
+.navbar-fade {
+  opacity: 0.4;
+}
+
+.navbar-inverse .navbar-toggle {
+  border-color: rgba(255, 255, 255, 0.25);
+}
+
+.nav &amp;gt; li &amp;gt; a {
+  max-height: 56px;
+}
+
+.navbar-brand {
+  height: 50px;
+  padding: 0;
+}
+
+.navbar-brand img, .navbar-brand span {
+  margin-left: $sp-logo-margin-x;
+  margin-right: $sp-logo-margin-x;
+  margin-top: $sp-logo-margin-y;
+  margin-bottom: $sp-logo-margin-y;
+  display: block;
+  max-height: $sp-logo-max-height;
+  max-width: $sp-logo-max-width;
+  position: relative;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+.breadcrumb-container {
+  background-color: $panel-bg;
+}
+
+/* for mobile app */
+.navbar-inverse.is-native {
+  background-color: #405060;
+}
+
+nav{
+ margin-bottom: 0px;
+ border-radius: 0px; 
+}
+
+.navbar-collapse {
+  padding-right: 0px;
+}
+
+.case-menu div#widget-tabs-2 {
+	border: none;
+}
+
+.case-menu div#widget-tabs-2 &amp;amp;gt; .panel-heading {
+	border: none;
+  bottom-border: 1px solid $border;
+}
+
+ul.nav.navbar-nav&amp;gt;div.header-loader{
+	display: none;
+}
+
+.typeahead-search {
+  width: 13%;
+  padding-top:13px;
+}
+
+/* Fix for Service Portal - Header Poorly Aligned in Safari */
+@media screen and (min-width: 768px) {
+  .navbar-collapse {
+    display: flex !important;
+  }
+}
+
+
+@media (min-width : 320px) and (max-width : 360px) {
+  .dropdown-menu.case-menu {
+    width: 320px;
+  }
+}
+
+@media (min-width : 360px) and (max-width : 450px) {
+  .dropdown-menu.case-menu {
+    width: 360px;
+  }
+}
+
+@media (min-width : 320px) and (max-width : 767px) {
+  .typeahead-search {
+    width: 100%;
+  }
+  .navbar-nav {
+    display:block;
+    margin-top:0px;
+    margin-bottom:0px;
+  }
+  .popup-edit {
+    background: $color-lightest;
+    position: fixed;
+    top:0; 
+    height:100%;
+    margin-top: 0;
+    max-height:100%;
+    width:100%
+  }
+  .navbar-collapse-label {
+    float: right;
+    margin-right: -5px;
+    margin-top: -7px;
+  }
+  button&amp;gt;span.label {
+    padding: .2em .5em .2em;
+  }  
+}
+
+@media (min-width : 768px) and (max-width : 1024px) {
+  .navbar-nav &amp;gt; li &amp;gt; a {
+    padding:20px 10px;
+  }
+}&lt;/css&gt;&lt;data_table&gt;sp_instance&lt;/data_table&gt;&lt;demo_data/&gt;&lt;description/&gt;&lt;docs/&gt;&lt;field_list/&gt;&lt;has_preview&gt;false&lt;/has_preview&gt;&lt;id&gt;hrmadrid-header&lt;/id&gt;&lt;internal&gt;false&lt;/internal&gt;&lt;link&gt;&lt;![CDATA[function(scope, element) {	
+	$(element).on('click.nav','.navbar-collapse.in',function(e) {	
+		var target = $(e.target);
+		if (target.is('a')) {
+			// collapse mobile nav if clicked an anchor
+			$(this).removeClass('in').addClass('collapse');
+			return;
+		}
+		
+		// if neither target nor parent is an anchor, do nothing
+		if (!target.parent().is('a'))
+			return;
+		
+		// collapse mobile nav if target is part of a submenu
+		if (target.parents("ul.dropdown-menu").length &gt; 0)
+			$(this).removeClass('in').addClass('collapse');
+	});
+}]]&gt;&lt;/link&gt;&lt;name&gt;HRMadrid Header&lt;/name&gt;&lt;option_schema/&gt;&lt;public&gt;false&lt;/public&gt;&lt;roles/&gt;&lt;script&gt;&lt;![CDATA[(function () {
+	data.ACTION_TODO_COUNT = 'update_todo_count';
+	data.ACTION_LOAD_CASES = 'load_cases';
+	data.isMobile = gs.isMobile();
+	var isHrCoreActive = GlidePluginManager().isActive('com.sn_hr_core');
+	if (isHrCoreActive) {
+		data.isHrCoreActive = true;
+		//Load To-dos count
+		if (!input || input.action == data.ACTION_TODO_COUNT) {
+			data.todoCount = new sn_hr_sp.hr_DashboardUtil().getHeaderTodoCount();
+			if (input)
+				return;
+		}
+		//Load To-dos widget if requested
+		if (input &amp;&amp; input.action == data.ACTION_LOAD_CASES) {
+			data.todoCaseList = $sp.getWidget('hrk-header-case-list', {isTodoList : true});
+			data.caseList = $sp.getWidget('hrk-header-case-list', {isTodoList : false});
+			if (input)
+			return;
+		} 	
+
+		// HR Profile
+		var gr = new GlideRecord('sn_hr_core_profile');
+		gr.addQuery('user', gs.getUserID());
+		gr.query();
+		if (!gr.next() &amp;&amp; new GlideRecord('sys_user').get(gs.getUserID())) {
+			gr.setValue('user', gs.getUserID());
+			gr.insert();
+		}
+		data.email = gs.getProperty('sn_hr_core.hr_email');
+	}
+	// populate the 'data' object
+	data.link = '?id=hri_user_profile&amp;sys_id='+ gs.getUserID();
+
+	// Check for chat properties
+	data.chatSupportEnabled = gs.getProperty('glide.connect.enabled', 'false') == 'true' &amp;&amp; gs.getProperty('glide.connect.support.enabled', 'false') == 'true';
+
+	// Defines the support queue ID that will be linked to by the Live Chat link in header
+	data.login_page = $sp.getValue('login_page');
+	var menu = $sp.getValue("sp_rectangle_menu");
+	data.menu = $sp.getWidgetFromInstance(menu);
+	if (data.menu &amp;&amp; data.menu.data) {
+		data.menu.data.replace = true;
+		// Hide login if menu already has link to login
+		data.hasLogin = false;
+		if (data.menu.data.menu.items) {
+			for(var i in data.menu.data.menu.items) {
+				var item = data.menu.data.menu.items[i];
+				if (item.type == 'page' &amp;&amp; item.sp_page == data.login_page)
+					data.hasLogin = true;
+			}
+		}
+	}
+
+	data.loginWidget = $sp.getWidgetFromInstance('login-modal');
+	data.typeahead = $sp.getWidgetFromInstance('typeahead-search');
+})();]]&gt;&lt;/script&gt;&lt;servicenow&gt;false&lt;/servicenow&gt;&lt;sys_class_name&gt;sp_header_footer&lt;/sys_class_name&gt;&lt;sys_created_by&gt;admin&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2018-07-12 09:51:19&lt;/sys_created_on&gt;&lt;sys_id&gt;a8d107b473131300c629e1e54cf6a703&lt;/sys_id&gt;&lt;sys_mod_count&gt;42&lt;/sys_mod_count&gt;&lt;sys_name&gt;HRMadrid Header&lt;/sys_name&gt;&lt;sys_package display_value="Employee Center Core" source="sn_hr_sp"&gt;3d1da2705b021200a4656ede91f91ab6&lt;/sys_package&gt;&lt;sys_policy/&gt;&lt;sys_scope display_value="Employee Center Core"&gt;3d1da2705b021200a4656ede91f91ab6&lt;/sys_scope&gt;&lt;sys_update_name&gt;sp_header_footer_a8d107b473131300c629e1e54cf6a703&lt;/sys_update_name&gt;&lt;sys_updated_by&gt;admin&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2021-01-19 07:38:16&lt;/sys_updated_on&gt;&lt;template&gt;&lt;![CDATA[&lt;div&gt;
+  &lt;!-- To-dos, Cases popup for mobile view --&gt;
+  &lt;div ng-if="data.isMobile" class="popup-edit popover bottom" id="popup_todos_mobile"&gt;
+    &lt;sp-widget widget="::data.todoCaseList"&gt;&lt;/sp-widget&gt;
+  &lt;/div&gt;
+  &lt;div ng-if="data.isMobile" class="popup-edit popover bottom" id="popup_cases_mobile"&gt;
+    &lt;sp-widget widget="::data.caseList"&gt;&lt;/sp-widget&gt;
+  &lt;/div&gt;
+  &lt;!-- Nav bar menu items starts--&gt;
+  &lt;nav class="navbar-inverse" ng-class="::{'navbar':!isViewNative, 'is-native': isViewNative}" role="navigation"&gt;
+    &lt;div ng-show="::!isViewNative" class="navbar-header"&gt;
+      &lt;a class="navbar-brand" ng-if="::!portal.logo" href="?id={{::portal.homepage_dv}}"&gt;&lt;span&gt;{{::portal.title}}&lt;/span&gt;&lt;/a&gt;
+      &lt;a class="navbar-brand navbar-brand-logo" ng-if="::portal.logo" href="?id={{::portal.homepage_dv}}"&gt;
+        &lt;img ng-src="{{::portal.logo}}" alt="{{::portal.title}}"/&gt;
+      &lt;/a&gt;
+      &lt;button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#sp-nav-bar"&gt;
+        &lt;span ng-show="data.todoCount &gt; 0" class="label label-as-badge label-primary navbar-collapse-label"&gt;{{data.todoCount}}&lt;/span&gt;
+        &lt;span class="sr-only"&gt;${Toggle navigation}&lt;/span&gt;
+        &lt;span class="icon-bar"&gt;&lt;/span&gt;
+        &lt;span class="icon-bar"&gt;&lt;/span&gt;
+        &lt;span class="icon-bar"&gt;&lt;/span&gt;
+      &lt;/button&gt;
+    &lt;/div&gt;
+   &lt;div class="navbar-header typeahead-search"&gt;
+      &lt;sp-widget widget="data.typeahead"&gt;&lt;/sp-widget&gt;
+   &lt;/div&gt;
+    &lt;div sp-navbar-toggle="" class="collapse navbar-collapse navbar-right" id="sp-nav-bar"&gt;
+      &lt;!-- Include The Menu --&gt;
+      &lt;ul ng-if="::user.logged_in" class="nav navbar-nav"&gt;
+        &lt;!-- Fix to show loading indicator at first place in the menu bar--&gt;
+        &lt;li&gt;
+          &lt;a&gt;
+            &lt;div class="header-loader" ng-show="loadingIndicator" id="hr_loading_indicator"&gt;
+              &lt;div class="hidden-xs sp-loading-indicator la-sm"&gt;
+                &lt;div&gt;&lt;/div&gt;
+                &lt;div&gt;&lt;/div&gt;
+                &lt;div&gt;&lt;/div&gt;
+              &lt;/div&gt;
+            &lt;/div&gt;
+          &lt;/a&gt;
+        &lt;/li&gt;
+        &lt;!--  To-Dos  --&gt;
+        &lt;li ng-if="data.isHrCoreActive"&gt;
+          &lt;a href="javascript:void(0)" data-toggle="{{popupType}}" id="todos_popup" data-target="{{todosPopupId}}" aria-label="${To-dos}"&gt;
+            &lt;span ng-bind-html="'${To-dos}'" aria-hidden="true"&gt;&lt;/span&gt;
+            &lt;span ng-show="data.todoCount &gt; 0" class="label label-as-badge label-primary"&gt;{{data.todoCount}}&lt;/span&gt;
+          &lt;/a&gt;
+          &lt;div ng-if="!data.isMobile" class="dropdown-menu case-menu" &gt;
+            &lt;sp-widget widget="::data.todoCaseList"&gt;&lt;/sp-widget&gt;
+          &lt;/div&gt;
+        &lt;/li&gt;
+        &lt;!--  Cases  --&gt;
+        &lt;li ng-if="data.isHrCoreActive"&gt;
+          &lt;a href="javascript:void(0)" data-toggle="{{popupType}}" id="cases_popup" data-target="{{casesPopupId}}" aria-label="${Cases}"&gt;
+            &lt;span ng-bind-html="'${Cases}'" aria-hidden="true"&gt;&lt;/span&gt;
+          &lt;/a&gt;
+          &lt;div ng-if="!data.isMobile" class="dropdown-menu case-menu" &gt;
+            &lt;sp-widget widget="::data.caseList"&gt;&lt;/sp-widget&gt;
+          &lt;/div&gt;
+        &lt;/li&gt;
+      &lt;/ul&gt;
+      &lt;sp-widget widget="data.menu"&gt;&lt;/sp-widget&gt;
+      &lt;ul ng-if="::(!user.logged_in &amp;&amp; page.id != portal.login_page_dv &amp;&amp; !data.hasLogin)" class="nav navbar-nav"&gt;
+        &lt;li&gt;&lt;a href ng-click="openLogin()"&gt;${Login}&lt;/a&gt;
+        &lt;/li&gt;
+      &lt;/ul&gt;
+      &lt;ul ng-if="::user.logged_in" class="nav navbar-nav"&gt;
+        &lt;!-- chat, avatar, and logout --&gt;
+        &lt;li ng-if="data.chatSupportEnabled == true &amp;&amp; data.isHrCoreActive"&gt;&lt;a target="chat" href="/$chat_support.do?queueID=fde232209f22120047a2d126c42e70ab"&gt;&lt;i alt="${Chat with HR}" class="fa fa-comments-o"&gt;&lt;/i&gt; ${Chat with HR}&lt;/a&gt;
+        &lt;/li&gt;
+        &lt;li ng-if="data.isHrCoreActive"&gt;
+          &lt;a href="mailto:{{data.email}}"&gt;&lt;i alt="${Email HR}" class="fa fa-envelope-o"&gt;&lt;/i&gt; ${Email HR}&lt;/a&gt;
+        &lt;/li&gt;
+        &lt;li class="dropdown hidden-xs"&gt;
+          &lt;a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown"&gt;
+            &lt;span class="navbar-avatar"&gt;&lt;sn-avatar class="avatar-small-medium" show-presence="false" primary="user.sys_id" /&gt;&lt;/span&gt;
+            &lt;span class="visible-lg-inline" aria-hidden="true"&gt;{{user.name}}&lt;/span&gt;
+          &lt;/a&gt;
+          &lt;ul class="dropdown-menu"&gt;
+            &lt;li&gt;&lt;a href="{{data.link}}"&gt;${Profile}&lt;/a&gt;
+            &lt;/li&gt;
+            &lt;li&gt;&lt;a href="{{::portal.logoutUrl}}"&gt;${Logout}&lt;/a&gt;
+            &lt;/li&gt;
+          &lt;/ul&gt;
+        &lt;/li&gt;
+        &lt;li class="visible-xs-block"&gt;&lt;a href="{{data.link}}"&gt;&lt;span class="navbar-avatar"&gt;&lt;sn-avatar class="avatar-small-medium" show-presence="false" primary="user.sys_id" /&gt;&lt;/span&gt;&lt;span aria-hidden="true"&gt;{{user.name}}&lt;/span&gt;&lt;/a&gt;
+        &lt;/li&gt;
+        &lt;li class="visible-xs-block"&gt;&lt;a href="{{::portal.logoutUrl}}"&gt;${Logout}&lt;/a&gt;
+        &lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/div&gt;
+  &lt;/nav&gt;
+&lt;/div&gt;]]&gt;&lt;/template&gt;&lt;/sp_widget&gt;</payload><sys_class_name>sp_rel_widget_clone</sys_class_name><sys_created_by>admin</sys_created_by><sys_created_on>2024-05-07 15:38:32</sys_created_on><sys_id>db4574599346c610ee61f5befaba1047</sys_id><sys_mod_count>0</sys_mod_count><sys_name>d34530d59346c610ee61f5befaba1094</sys_name><sys_package display_value="Feedback" source="x_1346722_feedback">cd38c55a93310210ee61f5befaba10ce</sys_package><sys_policy/><sys_scope display_value="Feedback">cd38c55a93310210ee61f5befaba10ce</sys_scope><sys_update_name>sp_rel_widget_clone_db4574599346c610ee61f5befaba1047</sys_update_name><sys_updated_by>admin</sys_updated_by><sys_updated_on>2024-05-07 15:38:32</sys_updated_on></sp_rel_widget_clone></record_update>]]></payload>
+        <payload_hash>-569444164</payload_hash>
+        <record_name>d34530d59346c610ee61f5befaba1094</record_name>
+        <reverted_from/>
+        <source>4138c55a93310210ee61f5befaba10ec</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-05-07 15:38:32</sys_created_on>
+        <sys_id>d74574599346c610ee61f5befaba104a</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>18f53b4daca0000001</sys_recorded_at>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-05-07 15:38:32</sys_updated_on>
+        <type>Widget Clone</type>
+        <update_guid>9b4574595f46c610c6a19b867cc3aa49</update_guid>
+        <update_guid_history>9b4574595f46c610c6a19b867cc3aa49:-569444164</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete display_value="">2cdb09599386c610ee61f5befaba1012</sys_audit_delete>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-05-07 17:16:55</sys_created_on>
+        <sys_db_object display_value="" name="sp_rel_widget_clone">sp_rel_widget_clone</sys_db_object>
+        <sys_id>15f53c4385974880a354e596538e0c91</sys_id>
+        <sys_metadata>db4574599346c610ee61f5befaba1047</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>d34530d59346c610ee61f5befaba1094</sys_name>
+        <sys_package display_value="Feedback" source="x_1346722_feedback">cd38c55a93310210ee61f5befaba10ce</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="Feedback">cd38c55a93310210ee61f5befaba10ce</sys_scope>
+        <sys_scope_delete display_value="">45cc0b7884124930a655d854c2ddc900</sys_scope_delete>
+        <sys_update_name>sp_rel_widget_clone_db4574599346c610ee61f5befaba1047</sys_update_name>
+        <sys_update_version display_value="sp_rel_widget_clone_db4574599346c610ee61f5befaba1047">d74574599346c610ee61f5befaba104a</sys_update_version>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-05-07 17:16:55</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

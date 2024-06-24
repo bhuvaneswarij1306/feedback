@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_instance_menu">
+    <sp_instance_menu action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <class_name/>
+        <color>default</color>
+        <css/>
+        <glyph/>
+        <id/>
+        <order>1</order>
+        <roles/>
+        <short_description/>
+        <size>md</size>
+        <sp_column/>
+        <sp_widget display_value="Header Menu">5ef595c1cb12020000f8d856634c9c6e</sp_widget>
+        <sys_class_name>sp_instance_menu</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-04-29 09:52:02</sys_created_on>
+        <sys_id>1378962a93bd4210ee61f5befaba106f</sys_id>
+        <sys_mod_count>3</sys_mod_count>
+        <sys_name>FVP Header Menu</sys_name>
+        <sys_package display_value="Feedback" source="x_1346722_feedback">cd38c55a93310210ee61f5befaba10ce</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Feedback">cd38c55a93310210ee61f5befaba10ce</sys_scope>
+        <sys_update_name>sp_instance_menu_1378962a93bd4210ee61f5befaba106f</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-04-29 10:56:38</sys_updated_on>
+        <title>FVP Header Menu</title>
+        <url/>
+        <widget_parameters><![CDATA[{"enable_cart": { "displayValue": "false","value": false},
+  "enable_wishlist": {"displayValue": "false","value": false},
+    "auto_update_cart": {"displayValue": "false","value": false},"auto_update_wishlist": {"displayValue": "false","value": false}}]]></widget_parameters>
+    </sp_instance_menu>
+    <sys_translated_text action="delete_multiple" query="documentkey=1378962a93bd4210ee61f5befaba106f"/>
+</record_update>

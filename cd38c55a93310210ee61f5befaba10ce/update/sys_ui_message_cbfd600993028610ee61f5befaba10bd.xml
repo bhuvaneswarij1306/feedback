@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_ui_message">
+    <sys_ui_message action="INSERT_OR_UPDATE">
+        <application>Virtual Agent</application>
+        <code/>
+        <commented_message/>
+        <key>va:topic:ff96ead293f90210ee61f5befaba10b7:node:ccdcd6f49ee140a39939434b43c5a186:field:message</key>
+        <language>en</language>
+        <message>Please Rate the Application complexity
+Complexity is based on how the application interface and accessible to the customers</message>
+        <sys_class_name>sys_ui_message</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-05-06 20:28:05</sys_created_on>
+        <sys_id>cbfd600993028610ee61f5befaba10bd</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>va:topic:ff96ead293f90210ee61f5befaba10b7:node:ccdcd6f49ee140a39939434b43c5a186:field:message</sys_name>
+        <sys_package display_value="Feedback" source="x_1346722_feedback">cd38c55a93310210ee61f5befaba10ce</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Feedback">cd38c55a93310210ee61f5befaba10ce</sys_scope>
+        <sys_update_name>sys_ui_message_cbfd600993028610ee61f5befaba10bd</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-05-06 20:28:05</sys_updated_on>
+    </sys_ui_message>
+</record_update>

@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_instance">
+    <sp_instance action="DELETE">
+        <active>true</active>
+        <class_name/>
+        <color>default</color>
+        <css/>
+        <glyph/>
+        <id/>
+        <order>2</order>
+        <roles/>
+        <short_description/>
+        <size>md</size>
+        <sp_column display_value="1">3a461ee693bd4210ee61f5befaba10c3</sp_column>
+        <sp_widget display_value="KB Top Rated">3c817b52cb30020000f8d856634c9cfb</sp_widget>
+        <sys_class_name>sp_instance</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-04-29 09:39:01</sys_created_on>
+        <sys_id>72461ee693bd4210ee61f5befaba10e4</sys_id>
+        <sys_mod_count>4</sys_mod_count>
+        <sys_name>Top Rated Articles</sys_name>
+        <sys_package display_value="Feedback" source="x_1346722_feedback">cd38c55a93310210ee61f5befaba10ce</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Feedback">cd38c55a93310210ee61f5befaba10ce</sys_scope>
+        <sys_update_name>sp_instance_72461ee693bd4210ee61f5befaba10e4</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-05-08 14:33:58</sys_updated_on>
+        <title>Top Rated Articles</title>
+        <url/>
+        <widget_parameters/>
+    </sp_instance>
+    <sys_translated_text action="DELETE" query="documentkey=72461ee693bd4210ee61f5befaba10e4"/>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="Feedback">cd38c55a93310210ee61f5befaba10ce</application>
+        <file_path/>
+        <instance_id>8afd14cb1b12b59439a54089bd4bcbcb</instance_id>
+        <instance_name>dev208512</instance_name>
+        <name>sp_instance_72461ee693bd4210ee61f5befaba10e4</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_instance"><sp_instance action="INSERT_OR_UPDATE"><active>true</active><class_name/><color>default</color><css/><glyph/><id/><order>2</order><roles/><short_description/><size>md</size><sp_column display_value="1">3a461ee693bd4210ee61f5befaba10c3</sp_column><sp_widget display_value="KB Top Rated">3c817b52cb30020000f8d856634c9cfb</sp_widget><sys_class_name>sp_instance</sys_class_name><sys_created_by>admin</sys_created_by><sys_created_on>2024-04-29 09:39:01</sys_created_on><sys_id>72461ee693bd4210ee61f5befaba10e4</sys_id><sys_mod_count>4</sys_mod_count><sys_name>Top Rated Articles</sys_name><sys_package display_value="Feedback" source="x_1346722_feedback">cd38c55a93310210ee61f5befaba10ce</sys_package><sys_policy/><sys_scope display_value="Feedback">cd38c55a93310210ee61f5befaba10ce</sys_scope><sys_update_name>sp_instance_72461ee693bd4210ee61f5befaba10e4</sys_update_name><sys_updated_by>admin</sys_updated_by><sys_updated_on>2024-05-08 14:33:58</sys_updated_on><title>Top Rated Articles</title><url/><widget_parameters/></sp_instance><sys_translated_text action="delete_multiple" query="documentkey=72461ee693bd4210ee61f5befaba10e4"/></record_update>]]></payload>
+        <payload_hash>-640889731</payload_hash>
+        <record_name>Top Rated Articles</record_name>
+        <reverted_from/>
+        <source>4138c55a93310210ee61f5befaba10ec</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-05-08 14:33:58</sys_created_on>
+        <sys_id>5710fd6d938e0a10ee61f5befaba10a2</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>18f58a0194b0000001</sys_recorded_at>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-05-08 14:33:58</sys_updated_on>
+        <type>Instance</type>
+        <update_guid>db10fd6d968e0a10dd7e4d53b72f47a1</update_guid>
+        <update_guid_history>db10fd6d968e0a10dd7e4d53b72f47a1:-640889731,0cec249d0106c6106759d4d3f5ea8966:-787818596,421ca05d5106c61031a357485bfea221:-934747461,6b6ab1ff01310210286bab9740478503:-787818596,b6461ee60abd42107e989d9f57dc9ce5:-640889731</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete display_value="Top Rated Articles">e4b1b12193ce0a10ee61f5befaba104d</sys_audit_delete>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-05-08 14:40:53</sys_created_on>
+        <sys_db_object display_value="" name="sp_instance">sp_instance</sys_db_object>
+        <sys_id>41ff98d9942948bca6795ba5cb9590f9</sys_id>
+        <sys_metadata>72461ee693bd4210ee61f5befaba10e4</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Top Rated Articles</sys_name>
+        <sys_package display_value="Feedback" source="x_1346722_feedback">cd38c55a93310210ee61f5befaba10ce</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="Feedback">cd38c55a93310210ee61f5befaba10ce</sys_scope>
+        <sys_scope_delete display_value="">45cc0b7884124930a655d854c2ddc900</sys_scope_delete>
+        <sys_update_name>sp_instance_72461ee693bd4210ee61f5befaba10e4</sys_update_name>
+        <sys_update_version display_value="sp_instance_72461ee693bd4210ee61f5befaba10e4">5710fd6d938e0a10ee61f5befaba10a2</sys_update_version>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-05-08 14:40:53</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>
